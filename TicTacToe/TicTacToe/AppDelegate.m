@@ -1,14 +1,21 @@
 #import "AppDelegate.h"
 
-@interface AppDelegate ()
-
-@end
+#import "HomePresenter.h"
+#import "HomeViewController.h"
 
 @implementation AppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-  // Override point for customization after application launch.
+
+  [self setWindow:[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]]];
+  [[self window] makeKeyAndVisible];
+
+  UIViewController *viewController = [HomePresenter createViewController];
+  UINavigationController *navController =
+      [[UINavigationController alloc] initWithRootViewController:viewController];
+  [[self window] setRootViewController:navController];
+
   return YES;
 }
 
