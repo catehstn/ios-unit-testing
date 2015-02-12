@@ -16,6 +16,7 @@
 		4CCCD8DD1A8CF5E100AB451F /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCCD8DC1A8CF5E100AB451F /* HomeViewController.m */; };
 		4CCCD8E11A8CF69600AB451F /* HomePresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCCD8E01A8CF69600AB451F /* HomePresenter.m */; };
 		4CCCD8E71A8CFF0400AB451F /* TicTacToeBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCCD8E61A8CFF0400AB451F /* TicTacToeBoard.m */; };
+		4CCCD8EB1A8D099B00AB451F /* ComputerPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCCD8EA1A8D099B00AB451F /* ComputerPlayer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,8 @@
 		4CCCD8E01A8CF69600AB451F /* HomePresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomePresenter.m; path = presenters/HomePresenter.m; sourceTree = "<group>"; };
 		4CCCD8E51A8CFF0400AB451F /* TicTacToeBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TicTacToeBoard.h; path = model/TicTacToeBoard.h; sourceTree = "<group>"; };
 		4CCCD8E61A8CFF0400AB451F /* TicTacToeBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TicTacToeBoard.m; path = model/TicTacToeBoard.m; sourceTree = "<group>"; };
+		4CCCD8E91A8D099B00AB451F /* ComputerPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ComputerPlayer.h; path = model/ComputerPlayer.h; sourceTree = "<group>"; };
+		4CCCD8EA1A8D099B00AB451F /* ComputerPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ComputerPlayer.m; path = model/ComputerPlayer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +172,8 @@
 			children = (
 				4CCCD8E51A8CFF0400AB451F /* TicTacToeBoard.h */,
 				4CCCD8E61A8CFF0400AB451F /* TicTacToeBoard.m */,
+				4CCCD8E91A8D099B00AB451F /* ComputerPlayer.h */,
+				4CCCD8EA1A8D099B00AB451F /* ComputerPlayer.m */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -278,6 +283,7 @@
 				4CCCD8E11A8CF69600AB451F /* HomePresenter.m in Sources */,
 				4CCCD8E71A8CFF0400AB451F /* TicTacToeBoard.m in Sources */,
 				4CCCD8DD1A8CF5E100AB451F /* HomeViewController.m in Sources */,
+				4CCCD8EB1A8D099B00AB451F /* ComputerPlayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
