@@ -3,12 +3,12 @@
 #import "TicTacToeBoard.h"
 
 @interface ComputerPlayer ()
-  TicTacToeBoard board_;
+  TicTacToeBoard *board_;
 @end
 
 @implementation ComputerPlayer
 
-- (id)initWithBoard:(TicTacToeBoard)board {
+- (id)initWithBoard:(TicTacToeBoard *)board {
   self = [super init];
   if (self) {
     board_ = board;
