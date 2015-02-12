@@ -47,4 +47,58 @@
   return self;
 }
 
+- (void)setA:(TicTacToeStateType)state {
+  if (sqA_ == TicTacToeStateEmpty) {
+    sqA_ = state;
+  }
+}
+
+- (void)setB:(TicTacToeStateType)state {
+  if (sqB_ == TicTacToeStateEmpty) {
+    sqB_ = state;
+  }
+}
+
+- (void)setC:(TicTacToeStateType)state {
+  if (sqC_ == TicTacToeStateEmpty) {
+    sqC_ = state;
+  }
+}
+
+- (void)setD:(TicTacToeStateType)state {
+  if (sqD_ == TicTacToeStateEmpty) {
+    sqD_ = state;
+  }
+}
+
+- (void)setE:(TicTacToeStateType)state {
+  if (sqE_ == TicTacToeStateEmpty) {
+    sqE_ = state;
+  }
+}
+
+- (void)setF:(TicTacToeStateType)state {
+  if (sqF_ == TicTacToeStateEmpty) {
+    sqF_ = state;
+  }
+}
+
+- (void)setG:(TicTacToeStateType)state {
+  if (sqG_ == TicTacToeStateEmpty) {
+    sqG_ = state;
+  }
+}
+
+- (void)setH:(TicTacToeStateType)state {
+  if (sqH_ == TicTacToeStateEmpty) {
+    sqH_ = state;
+  }
+}
+
+- (void)setI:(TicTacToeStateType)state {
+  if (sqI_ == TicTacToeStateEmpty) {
+    sqI_ = state;
+  }
+}
+
 @end

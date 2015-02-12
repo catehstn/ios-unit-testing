@@ -8,14 +8,14 @@ typedef NS_ENUM(NSInteger, TicTacToeStateType) {
   TicTacToeStateEmpty
 };
 
-@property(nonatomic, readonly) TicTacToeStateType A;
-@property(nonatomic, readonly) TicTacToeStateType B;
-@property(nonatomic, readonly) TicTacToeStateType C;
-@property(nonatomic, readonly) TicTacToeStateType D;
-@property(nonatomic, readonly) TicTacToeStateType E;
-@property(nonatomic, readonly) TicTacToeStateType F;
-@property(nonatomic, readonly) TicTacToeStateType G;
-@property(nonatomic, readonly) TicTacToeStateType H;
-@property(nonatomic, readonly) TicTacToeStateType I;
+@property(nonatomic, assign) TicTacToeStateType A;
+@property(nonatomic, assign) TicTacToeStateType B;
+@property(nonatomic, assign) TicTacToeStateType C;
+@property(nonatomic, assign) TicTacToeStateType D;
+@property(nonatomic, assign) TicTacToeStateType E;
+@property(nonatomic, assign) TicTacToeStateType F;
+@property(nonatomic, assign) TicTacToeStateType G;
+@property(nonatomic, assign) TicTacToeStateType H;
+@property(nonatomic, assign) TicTacToeStateType I;
 
 @end

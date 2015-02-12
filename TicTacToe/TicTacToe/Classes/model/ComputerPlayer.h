@@ -1,9 +1,11 @@
 #import <Foundation/Foundation.h>
 
-@class TicTacToeBoard;
+#import "TicTacToeBoard.h"
 
 @interface ComputerPlayer : NSObject
 
-- (id)initWithBoard:(TicTacToeBoard *)board;
+- (id)initWithBoard:(TicTacToeBoard *)board type:(TicTacToeStateType)type;
+
+- (void)makeNextMove;
 
 @end
