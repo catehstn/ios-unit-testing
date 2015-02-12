@@ -6,6 +6,11 @@
 
 @implementation HomeViewController
 
+- (void)loadView {
+  [super loadView];
+  [[self view] setBackgroundColor:[UIColor orangeColor]];
+}
+
 - (void)viewDidLoad {
   [super viewDidLoad];
   // Do any additional setup after loading the view.
