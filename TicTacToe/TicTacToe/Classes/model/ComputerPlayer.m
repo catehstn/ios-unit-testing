@@ -2,8 +2,9 @@
 
 #import "TicTacToeBoard.h"
 
-@interface ComputerPlayer ()
+@interface ComputerPlayer () {
   TicTacToeBoard *board_;
+}
 @end
 
 @implementation ComputerPlayer
