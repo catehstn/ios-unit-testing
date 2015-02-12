@@ -15,6 +15,7 @@
 		4CCCD8D81A8CEE1200AB451F /* CHViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCCD8D61A8CEE1200AB451F /* CHViewController.m */; };
 		4CCCD8DD1A8CF5E100AB451F /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCCD8DC1A8CF5E100AB451F /* HomeViewController.m */; };
 		4CCCD8E11A8CF69600AB451F /* HomePresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCCD8E01A8CF69600AB451F /* HomePresenter.m */; };
+		4CCCD8E71A8CFF0400AB451F /* TicTacToeBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCCD8E61A8CFF0400AB451F /* TicTacToeBoard.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,8 @@
 		4CCCD8DC1A8CF5E100AB451F /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeViewController.m; path = viewcontrollers/HomeViewController.m; sourceTree = "<group>"; };
 		4CCCD8DF1A8CF69600AB451F /* HomePresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomePresenter.h; path = presenters/HomePresenter.h; sourceTree = "<group>"; };
 		4CCCD8E01A8CF69600AB451F /* HomePresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomePresenter.m; path = presenters/HomePresenter.m; sourceTree = "<group>"; };
+		4CCCD8E51A8CFF0400AB451F /* TicTacToeBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TicTacToeBoard.h; path = model/TicTacToeBoard.h; sourceTree = "<group>"; };
+		4CCCD8E61A8CFF0400AB451F /* TicTacToeBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TicTacToeBoard.m; path = model/TicTacToeBoard.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +127,7 @@
 		4CCCD8D11A8CEE1200AB451F /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				4CCCD8E41A8CFED300AB451F /* model */,
 				4CCCD8E21A8CF6A100AB451F /* presenters */,
 				4CCCD8D21A8CEE1200AB451F /* infrastructure */,
 				4CCCD8DE1A8CF5E900AB451F /* viewcontrollers */,
@@ -158,6 +162,15 @@
 				4CCCD8E01A8CF69600AB451F /* HomePresenter.m */,
 			);
 			name = presenters;
+			sourceTree = "<group>";
+		};
+		4CCCD8E41A8CFED300AB451F /* model */ = {
+			isa = PBXGroup;
+			children = (
+				4CCCD8E51A8CFF0400AB451F /* TicTacToeBoard.h */,
+				4CCCD8E61A8CFF0400AB451F /* TicTacToeBoard.m */,
+			);
+			name = model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,6 +276,7 @@
 				4CCCD8B01A8CEC7A00AB451F /* AppDelegate.m in Sources */,
 				4CCCD8AD1A8CEC7A00AB451F /* main.m in Sources */,
 				4CCCD8E11A8CF69600AB451F /* HomePresenter.m in Sources */,
+				4CCCD8E71A8CFF0400AB451F /* TicTacToeBoard.m in Sources */,
 				4CCCD8DD1A8CF5E100AB451F /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
