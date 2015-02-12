@@ -4,6 +4,6 @@
 
 @interface ComputerPlayer : NSObject
 
-- (id)initWithBoard:(TicTacToeBoard)board;
+- (id)initWithBoard:(TicTacToeBoard *)board;
 
 @end
