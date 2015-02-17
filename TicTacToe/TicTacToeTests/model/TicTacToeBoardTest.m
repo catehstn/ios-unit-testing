@@ -64,4 +64,12 @@
   XCTAssertFalse([board_ playXPos:2 yPos:2 toState:TicTacToeStateInvalid]);
 }
 
+- (void)testPlayValid {
+  for (int x = 0; x < 3; x++) {
+    for (int y = 0; y < 3; y++) {
+      XCTAssertTrue([board_ playXPos:x yPos:y toState:TicTacToeStateO]);
+    }
+  }
+}
+
 @end
