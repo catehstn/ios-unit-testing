@@ -19,24 +19,13 @@
 - (void)makeNextMove {
   // Just make the first available.
   // TODO(cate): Do better.
-  if ([board_ A] != TicTacToeStateEmpty) {
-    [board_ setA:type_];
-  } else if ([board_ B] != TicTacToeStateEmpty) {
-    [board_ setB:type_];
-  } else if ([board_ C] != TicTacToeStateEmpty) {
-    [board_ setC:type_];
-  } else if ([board_ D] != TicTacToeStateEmpty) {
-    [board_ setD:type_];
-  } else if ([board_ E] != TicTacToeStateEmpty) {
-    [board_ setE:type_];
-  } else if ([board_ F] != TicTacToeStateEmpty) {
-    [board_ setF:type_];
-  } else if ([board_ G] != TicTacToeStateEmpty) {
-    [board_ setG:type_];
-  } else if ([board_ H] != TicTacToeStateEmpty) {
-    [board_ setH:type_];
-  } else if ([board_ I] != TicTacToeStateEmpty) {
-    [board_ setI:type_];
+  for (int x = 0; x < 3; x++) {
+    for (int y = 0; y < 3; y++) {
+      if ([board_ stateForXPos:x yPos:y] == TicTacToeStateEmpty) {
+        [board_ playXPos:x yPos:y toState:type_];
+        return;
+      }
+    }
   }
 }
 
