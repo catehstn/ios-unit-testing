@@ -10,13 +10,13 @@
 		4CCCD8AD1A8CEC7A00AB451F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCCD8AC1A8CEC7A00AB451F /* main.m */; };
 		4CCCD8B01A8CEC7A00AB451F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCCD8AF1A8CEC7A00AB451F /* AppDelegate.m */; };
 		4CCCD8B81A8CEC7A00AB451F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CCCD8B71A8CEC7A00AB451F /* Images.xcassets */; };
-		4CCCD8C71A8CEC7A00AB451F /* TicTacToeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCCD8C61A8CEC7A00AB451F /* TicTacToeTests.m */; };
 		4CCCD8D71A8CEE1200AB451F /* CHPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCCD8D41A8CEE1200AB451F /* CHPresenter.m */; };
 		4CCCD8D81A8CEE1200AB451F /* CHViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCCD8D61A8CEE1200AB451F /* CHViewController.m */; };
 		4CCCD8DD1A8CF5E100AB451F /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCCD8DC1A8CF5E100AB451F /* HomeViewController.m */; };
 		4CCCD8E11A8CF69600AB451F /* HomePresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCCD8E01A8CF69600AB451F /* HomePresenter.m */; };
 		4CCCD8E71A8CFF0400AB451F /* TicTacToeBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCCD8E61A8CFF0400AB451F /* TicTacToeBoard.m */; };
 		4CCCD8EB1A8D099B00AB451F /* ComputerPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCCD8EA1A8D099B00AB451F /* ComputerPlayer.m */; };
+		4CCCD8EF1A93B7E900AB451F /* TicTacToeBoardTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCCD8EE1A93B7E900AB451F /* TicTacToeBoardTest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +38,6 @@
 		4CCCD8B71A8CEC7A00AB451F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4CCCD8C01A8CEC7A00AB451F /* TicTacToeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TicTacToeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CCCD8C51A8CEC7A00AB451F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4CCCD8C61A8CEC7A00AB451F /* TicTacToeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TicTacToeTests.m; sourceTree = "<group>"; };
 		4CCCD8D31A8CEE1200AB451F /* CHPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHPresenter.h; sourceTree = "<group>"; };
 		4CCCD8D41A8CEE1200AB451F /* CHPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHPresenter.m; sourceTree = "<group>"; };
 		4CCCD8D51A8CEE1200AB451F /* CHViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHViewController.h; sourceTree = "<group>"; };
@@ -51,6 +50,7 @@
 		4CCCD8E61A8CFF0400AB451F /* TicTacToeBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TicTacToeBoard.m; path = model/TicTacToeBoard.m; sourceTree = "<group>"; };
 		4CCCD8E91A8D099B00AB451F /* ComputerPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ComputerPlayer.h; path = model/ComputerPlayer.h; sourceTree = "<group>"; };
 		4CCCD8EA1A8D099B00AB451F /* ComputerPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ComputerPlayer.m; path = model/ComputerPlayer.m; sourceTree = "<group>"; };
+		4CCCD8EE1A93B7E900AB451F /* TicTacToeBoardTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TicTacToeBoardTest.m; path = model/TicTacToeBoardTest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,7 +113,7 @@
 		4CCCD8C31A8CEC7A00AB451F /* TicTacToeTests */ = {
 			isa = PBXGroup;
 			children = (
-				4CCCD8C61A8CEC7A00AB451F /* TicTacToeTests.m */,
+				4CCCD8F01A93B7F000AB451F /* model */,
 				4CCCD8C41A8CEC7A00AB451F /* Supporting Files */,
 			);
 			path = TicTacToeTests;
@@ -174,6 +174,14 @@
 				4CCCD8E61A8CFF0400AB451F /* TicTacToeBoard.m */,
 				4CCCD8E91A8D099B00AB451F /* ComputerPlayer.h */,
 				4CCCD8EA1A8D099B00AB451F /* ComputerPlayer.m */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		4CCCD8F01A93B7F000AB451F /* model */ = {
+			isa = PBXGroup;
+			children = (
+				4CCCD8EE1A93B7E900AB451F /* TicTacToeBoardTest.m */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -291,7 +299,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4CCCD8C71A8CEC7A00AB451F /* TicTacToeTests.m in Sources */,
+				4CCCD8EF1A93B7E900AB451F /* TicTacToeBoardTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
