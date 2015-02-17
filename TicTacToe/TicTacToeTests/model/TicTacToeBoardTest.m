@@ -24,4 +24,20 @@
   }
 }
 
+- (void)testStateNegativeX {
+  XCTAssertEqual([board_ stateForXPos:-2 yPos:2], TicTacToeStateInvalid);
+}
+
+- (void)testStateXTooLarge {
+  XCTAssertEqual([board_ stateForXPos:3 yPos:2], TicTacToeStateInvalid);
+}
+
+- (void)testStateNegativeY {
+  XCTAssertEqual([board_ stateForXPos:2 yPos:-2], TicTacToeStateInvalid);
+}
+
+- (void)testStateYTooLarge {
+  XCTAssertEqual([board_ stateForXPos:0 yPos:3], TicTacToeStateInvalid);
+}
+
 @end
