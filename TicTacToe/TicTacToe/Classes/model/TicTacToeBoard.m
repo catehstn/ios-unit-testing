@@ -7,7 +7,7 @@
   2,0 | 2,1 | 2,2
 */
 @interface TicTacToeBoard () {
-  NSArray *board_;
+  NSMutableArray *board_;
 }
 @end
 
@@ -17,7 +17,8 @@
   self = [super init];
   if (self) {
     NSNumber *v = [NSNumber numberWithInteger:TicTacToeStateEmpty];
-    board_ = @[@[v, v, v], @[v, v, v], @[v, v, v]];
+    NSMutableArray *vs = [NSMutableArray arrayWithArray:@[v, v, v]];
+    board_ = [NSMutableArray arrayWithArray:@[[vs mutableCopy], [vs mutableCopy], [vs mutableCopy]]];
   }
   return self;
 }
@@ -36,7 +37,7 @@
       [board_[x][y] integerValue] != TicTacToeStateEmpty) {
     return NO;
   }
-  board_[x][y] = [NSNumber numberWithInteger:state];
+  [board_[x] setObject:[NSNumber numberWithInteger:state] atIndex:y];
   return YES;
 }
 
