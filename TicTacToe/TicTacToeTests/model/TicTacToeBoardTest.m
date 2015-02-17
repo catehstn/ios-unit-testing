@@ -40,4 +40,20 @@
   XCTAssertEqual([board_ stateForXPos:0 yPos:3], TicTacToeStateInvalid);
 }
 
+- (void)testPlayNegativeX {
+  XCTAssertFalse([board_ playXPos:-2 yPos:1 toState:TicTacToeStateO]);
+}
+
+- (void)testPlayXTooLarge {
+  XCTAssertFalse([board_ playXPos:3 yPos:1 toState:TicTacToeStateO]);
+}
+
+- (void)testPlayNegativeY {
+  XCTAssertFalse([board_ playXPos:2 yPos:-1 toState:TicTacToeStateO]);
+}
+
+- (void)testPlayYTooLarge {
+XCTAssertFalse([board_ playXPos:2 yPos:3 toState:TicTacToeStateO]);
+}
+
 @end
