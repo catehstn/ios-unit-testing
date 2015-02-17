@@ -53,7 +53,7 @@
 }
 
 - (void)testPlayYTooLarge {
-XCTAssertFalse([board_ playXPos:2 yPos:3 toState:TicTacToeStateO]);
+  XCTAssertFalse([board_ playXPos:2 yPos:3 toState:TicTacToeStateO]);
 }
 
 @end
