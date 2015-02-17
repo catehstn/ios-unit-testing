@@ -22,9 +22,18 @@
   return self;
 }
 
+- (TicTacToeStateType)stateForXPos:(int)x yPos:(int)y {
+  if (x < 0 || x > 2 || y < 0 || y > 2) {
+    return TicTacToeStateInvalid;
+  } else {
+    return [board_[x][y] integerValue];
+  }
+}
+
 - (BOOL)playXPos:(int)x yPos:(int)y toState:(TicTacToeStateType)state {
-  if (x > 2 || y > 2 || state == TicTacToeStateEmpty ||
-      [board_[x][y] intValue] != TicTacToeStateEmpty) {
+  if (x < 0 || x > 2 || y < 0 || y > 2 ||
+      state == TicTacToeStateEmpty || state == TicTacToeStateInvalid ||
+      [board_[x][y] integerValue] != TicTacToeStateEmpty) {
     return NO;
   }
   board_[x][y] = [NSNumber numberWithInteger:state];
