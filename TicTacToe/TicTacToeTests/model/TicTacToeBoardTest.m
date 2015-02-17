@@ -56,4 +56,12 @@
   XCTAssertFalse([board_ playXPos:2 yPos:3 toState:TicTacToeStateO]);
 }
 
+- (void)testPlayEmptyState {
+  XCTAssertFalse([board_ playXPos:2 yPos:2 toState:TicTacToeStateEmpty]);
+}
+
+- (void)testPlayInvalidState {
+  XCTAssertFalse([board_ playXPos:2 yPos:2 toState:TicTacToeStateInvalid]);
+}
+
 @end
