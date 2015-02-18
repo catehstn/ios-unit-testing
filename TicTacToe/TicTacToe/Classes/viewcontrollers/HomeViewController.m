@@ -1,14 +1,14 @@
 #import "HomeViewController.h"
 
-@interface HomeViewController ()
+#import "HomeView.h"
 
+@interface HomeViewController ()
 @end
 
 @implementation HomeViewController
 
 - (void)loadView {
-  [super loadView];
-  [[self view] setBackgroundColor:[UIColor orangeColor]];
+  [self setView:[HomeView new]];
 }
 
 - (void)viewDidLoad {

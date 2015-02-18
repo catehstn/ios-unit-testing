@@ -18,6 +18,7 @@
 		4CCCD8EB1A8D099B00AB451F /* ComputerPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCCD8EA1A8D099B00AB451F /* ComputerPlayer.m */; };
 		4CCCD8EF1A93B7E900AB451F /* TicTacToeBoardTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCCD8EE1A93B7E900AB451F /* TicTacToeBoardTest.m */; };
 		4CCCD8F21A94C88A00AB451F /* ComputerPlayerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCCD8F11A94C88A00AB451F /* ComputerPlayerTest.m */; };
+		4CCCD8FA1A94CDAC00AB451F /* HomeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCCD8F81A94CDAC00AB451F /* HomeView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		4CCCD8EA1A8D099B00AB451F /* ComputerPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ComputerPlayer.m; path = model/ComputerPlayer.m; sourceTree = "<group>"; };
 		4CCCD8EE1A93B7E900AB451F /* TicTacToeBoardTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TicTacToeBoardTest.m; path = model/TicTacToeBoardTest.m; sourceTree = "<group>"; };
 		4CCCD8F11A94C88A00AB451F /* ComputerPlayerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ComputerPlayerTest.m; path = model/ComputerPlayerTest.m; sourceTree = "<group>"; };
+		4CCCD8F81A94CDAC00AB451F /* HomeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeView.m; path = views/HomeView.m; sourceTree = "<group>"; };
+		4CCCD8F91A94CDAC00AB451F /* HomeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeView.h; path = views/HomeView.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +135,7 @@
 		4CCCD8D11A8CEE1200AB451F /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				4CCCD8F41A94CBFE00AB451F /* views */,
 				4CCCD8E41A8CFED300AB451F /* model */,
 				4CCCD8E21A8CF6A100AB451F /* presenters */,
 				4CCCD8D21A8CEE1200AB451F /* infrastructure */,
@@ -187,6 +191,15 @@
 				4CCCD8F11A94C88A00AB451F /* ComputerPlayerTest.m */,
 			);
 			name = model;
+			sourceTree = "<group>";
+		};
+		4CCCD8F41A94CBFE00AB451F /* views */ = {
+			isa = PBXGroup;
+			children = (
+				4CCCD8F81A94CDAC00AB451F /* HomeView.m */,
+				4CCCD8F91A94CDAC00AB451F /* HomeView.h */,
+			);
+			name = views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,6 +300,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CCCD8FA1A94CDAC00AB451F /* HomeView.m in Sources */,
 				4CCCD8D71A8CEE1200AB451F /* CHPresenter.m in Sources */,
 				4CCCD8D81A8CEE1200AB451F /* CHViewController.m in Sources */,
 				4CCCD8B01A8CEC7A00AB451F /* AppDelegate.m in Sources */,
