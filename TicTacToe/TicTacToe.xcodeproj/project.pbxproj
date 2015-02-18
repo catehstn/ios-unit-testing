@@ -17,6 +17,7 @@
 		4CCCD8E71A8CFF0400AB451F /* TicTacToeBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCCD8E61A8CFF0400AB451F /* TicTacToeBoard.m */; };
 		4CCCD8EB1A8D099B00AB451F /* ComputerPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCCD8EA1A8D099B00AB451F /* ComputerPlayer.m */; };
 		4CCCD8EF1A93B7E900AB451F /* TicTacToeBoardTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCCD8EE1A93B7E900AB451F /* TicTacToeBoardTest.m */; };
+		4CCCD8F21A94C88A00AB451F /* ComputerPlayerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCCD8F11A94C88A00AB451F /* ComputerPlayerTest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		4CCCD8E91A8D099B00AB451F /* ComputerPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ComputerPlayer.h; path = model/ComputerPlayer.h; sourceTree = "<group>"; };
 		4CCCD8EA1A8D099B00AB451F /* ComputerPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ComputerPlayer.m; path = model/ComputerPlayer.m; sourceTree = "<group>"; };
 		4CCCD8EE1A93B7E900AB451F /* TicTacToeBoardTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TicTacToeBoardTest.m; path = model/TicTacToeBoardTest.m; sourceTree = "<group>"; };
+		4CCCD8F11A94C88A00AB451F /* ComputerPlayerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ComputerPlayerTest.m; path = model/ComputerPlayerTest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				4CCCD8EE1A93B7E900AB451F /* TicTacToeBoardTest.m */,
+				4CCCD8F11A94C88A00AB451F /* ComputerPlayerTest.m */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CCCD8EF1A93B7E900AB451F /* TicTacToeBoardTest.m in Sources */,
+				4CCCD8F21A94C88A00AB451F /* ComputerPlayerTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

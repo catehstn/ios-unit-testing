@@ -12,6 +12,7 @@
   self = [super init];
   if (self) {
     board_ = board;
+    type_ = type;
   }
   return self;
 }
