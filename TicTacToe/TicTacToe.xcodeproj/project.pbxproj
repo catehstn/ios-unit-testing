@@ -20,6 +20,8 @@
 		4CCCD8F21A94C88A00AB451F /* ComputerPlayerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCCD8F11A94C88A00AB451F /* ComputerPlayerTest.m */; };
 		4CCCD8FA1A94CDAC00AB451F /* HomeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCCD8F81A94CDAC00AB451F /* HomeView.m */; };
 		4CCCD8FD1A94D56F00AB451F /* GameView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCCD8FC1A94D56F00AB451F /* GameView.m */; };
+		4CCCD9001A94D90C00AB451F /* GamePresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCCD8FF1A94D90C00AB451F /* GamePresenter.m */; };
+		4CCCD9031A94D92F00AB451F /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCCD9021A94D92F00AB451F /* GameViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,10 @@
 		4CCCD8F91A94CDAC00AB451F /* HomeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeView.h; path = views/HomeView.h; sourceTree = "<group>"; };
 		4CCCD8FB1A94D56F00AB451F /* GameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameView.h; path = views/GameView.h; sourceTree = "<group>"; };
 		4CCCD8FC1A94D56F00AB451F /* GameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameView.m; path = views/GameView.m; sourceTree = "<group>"; };
+		4CCCD8FE1A94D90C00AB451F /* GamePresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GamePresenter.h; path = presenters/GamePresenter.h; sourceTree = "<group>"; };
+		4CCCD8FF1A94D90C00AB451F /* GamePresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GamePresenter.m; path = presenters/GamePresenter.m; sourceTree = "<group>"; };
+		4CCCD9011A94D92F00AB451F /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		4CCCD9021A94D92F00AB451F /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +169,8 @@
 			children = (
 				4CCCD8DB1A8CF5E100AB451F /* HomeViewController.h */,
 				4CCCD8DC1A8CF5E100AB451F /* HomeViewController.m */,
+				4CCCD9011A94D92F00AB451F /* GameViewController.h */,
+				4CCCD9021A94D92F00AB451F /* GameViewController.m */,
 			);
 			name = viewcontrollers;
 			sourceTree = "<group>";
@@ -172,6 +180,8 @@
 			children = (
 				4CCCD8DF1A8CF69600AB451F /* HomePresenter.h */,
 				4CCCD8E01A8CF69600AB451F /* HomePresenter.m */,
+				4CCCD8FE1A94D90C00AB451F /* GamePresenter.h */,
+				4CCCD8FF1A94D90C00AB451F /* GamePresenter.m */,
 			);
 			name = presenters;
 			sourceTree = "<group>";
@@ -306,8 +316,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CCCD8FA1A94CDAC00AB451F /* HomeView.m in Sources */,
+				4CCCD9001A94D90C00AB451F /* GamePresenter.m in Sources */,
 				4CCCD8D71A8CEE1200AB451F /* CHPresenter.m in Sources */,
 				4CCCD8D81A8CEE1200AB451F /* CHViewController.m in Sources */,
+				4CCCD9031A94D92F00AB451F /* GameViewController.m in Sources */,
 				4CCCD8B01A8CEC7A00AB451F /* AppDelegate.m in Sources */,
 				4CCCD8AD1A8CEC7A00AB451F /* main.m in Sources */,
 				4CCCD8E11A8CF69600AB451F /* HomePresenter.m in Sources */,
