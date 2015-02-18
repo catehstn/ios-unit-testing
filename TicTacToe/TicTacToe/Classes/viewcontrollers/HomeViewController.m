@@ -11,4 +11,8 @@
   [self setView:[HomeView new]];
 }
 
+- (HomeView *)homeView {
+  return (HomeView *)[self view];
+}
+
 @end
