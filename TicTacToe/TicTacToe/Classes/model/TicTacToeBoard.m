@@ -41,7 +41,20 @@
       }
     }
   }
-  // TODO(cate): Check diagonals.
+  if (board_[0][0] == board_[1][1] && board_[1][1] == board_[2][2]) {
+    if ([board_[0][0] integerValue] == TicTacToeStateO) {
+      return TicTacToeGameStateOWin;
+    } else if ([board_[0][0] integerValue] == TicTacToeStateX) {
+      return TicTacToeGameStateXWin;
+    }
+  }
+  if (board_[0][2] == board_[1][1] && board_[1][1] == board_[0][2]) {
+    if ([board_[0][2] integerValue] == TicTacToeStateO) {
+      return TicTacToeGameStateOWin;
+    } else if ([board_[0][2] integerValue] == TicTacToeStateX) {
+      return TicTacToeGameStateXWin;
+    }
+  }
   // TODO(cate): Check not full.
   return TicTacToeGameStateNotEnded;
 }
