@@ -34,7 +34,7 @@
       }
     }
     if (board_[0][i] == board_[1][i] && board_[1][i] == board_[2][i]) {
-      if ([board_[0][1] integerValue] == TicTacToeStateO) {
+      if ([board_[0][i] integerValue] == TicTacToeStateO) {
         return TicTacToeGameStateOWin;
       } else if ([board_[0][i] integerValue] == TicTacToeStateX) {
         return TicTacToeGameStateXWin;
