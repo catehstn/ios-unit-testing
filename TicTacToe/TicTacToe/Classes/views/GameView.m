@@ -33,6 +33,8 @@ static const CGFloat kPadding = 5.0;
 }
 
 - (void)createView {
+  [self setBackgroundColor:[UIColor blackColor]];
+
   buttonA_ = [self createAndAddButtonAtX:0 y:0];
   buttonB_ = [self createAndAddButtonAtX:1 y:0];
   buttonC_ = [self createAndAddButtonAtX:2 y:0];
