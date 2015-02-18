@@ -13,6 +13,10 @@
 
 @implementation HomeView
 
+@synthesize playOButton = playOButton_;
+@synthesize playXButton = playXButton_;
+@synthesize playXOButton = playXOButton_;
+
 static const CGFloat kPadding = 5.0;
 
 - (id)initWithFrame:(CGRect)frame {
@@ -28,29 +32,29 @@ static const CGFloat kPadding = 5.0;
   [self setBackgroundColor:[UIColor whiteColor]];
 
   playXOButton_ = [UIButton new];
-  [playXOButton_ setTitle:@"XO" forState:UIControlStateNormal];
-  [playXOButton_ setTranslatesAutoresizingMaskIntoConstraints:NO];
-  [playXOButton_ setBackgroundColor:[UIColor purpleColor]];
-  [self addSubview:playXOButton_];
+  [[self playXOButton] setTitle:@"XO" forState:UIControlStateNormal];
+  [[self playXOButton] setTranslatesAutoresizingMaskIntoConstraints:NO];
+  [[self playXOButton] setBackgroundColor:[UIColor purpleColor]];
+  [self addSubview:[self playXOButton]];
 
   playOButton_ = [UIButton new];
-  [playOButton_ setTitle:@"O" forState:UIControlStateNormal];
-  [playOButton_ setTranslatesAutoresizingMaskIntoConstraints:NO];
-  [playOButton_ setBackgroundColor:[UIColor magentaColor]];
-  [self addSubview:playOButton_];
+  [[self playOButton] setTitle:@"O" forState:UIControlStateNormal];
+  [[self playOButton] setTranslatesAutoresizingMaskIntoConstraints:NO];
+  [[self playOButton] setBackgroundColor:[UIColor magentaColor]];
+  [self addSubview:[self playOButton]];
 
   playXButton_ = [UIButton new];
-  [playXButton_ setTitle:@"X" forState:UIControlStateNormal];
-  [playXButton_ setTranslatesAutoresizingMaskIntoConstraints:NO];
-  [playXButton_ setBackgroundColor:[UIColor blueColor]];
-  [self addSubview:playXButton_];
+  [[self playXButton] setTitle:@"X" forState:UIControlStateNormal];
+  [[self playXButton] setTranslatesAutoresizingMaskIntoConstraints:NO];
+  [[self playXButton] setBackgroundColor:[UIColor blueColor]];
+  [self addSubview:[self playXButton]];
 }
 
 - (void)setUpConstraints {
   NSDictionary *views = @{
-      @"xo": playXOButton_,
-      @"x": playXButton_,
-      @"o": playOButton_
+      @"xo": [self playXOButton],
+      @"x": [self playXButton],
+      @"o": [self playOButton]
   };
 
   NSString *format = @"|-(padding)-[xo]-(padding)-[x(==xo)]-(padding)-[o(==xo)]-(padding)-|";
@@ -68,10 +72,10 @@ static const CGFloat kPadding = 5.0;
                                                                     views:views];
   [NSLayoutConstraint activateConstraints:vConstraints];
 
-  [[NSLayoutConstraint constraintWithItem:playXOButton_
+  [[NSLayoutConstraint constraintWithItem:[self playXOButton]
                                 attribute:NSLayoutAttributeHeight
                                 relatedBy:NSLayoutRelationEqual
-                                   toItem:playXOButton_
+                                   toItem:[self playXOButton]
                                 attribute:NSLayoutAttributeWidth
                                multiplier:1
                                  constant:0] setActive:YES];
