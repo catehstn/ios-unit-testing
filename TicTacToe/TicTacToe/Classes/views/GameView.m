@@ -123,4 +123,11 @@ static const CGFloat kPadding = 5.0;
   return button;
 }
 
+#pragma mark getters
+
+- (NSArray *)buttons {
+  return
+      @[buttonA_, buttonB_, buttonC_, buttonD_, buttonE_, buttonF_, buttonG_, buttonH_, buttonI_];
+}
+
 @end

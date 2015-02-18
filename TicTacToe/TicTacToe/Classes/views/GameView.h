@@ -2,4 +2,6 @@
 
 @interface GameView : UIView
 
+@property(nonatomic, readonly) NSArray *buttons;
+
 @end
