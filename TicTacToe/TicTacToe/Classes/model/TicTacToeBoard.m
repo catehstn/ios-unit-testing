@@ -55,8 +55,14 @@
       return TicTacToeGameStateXWin;
     }
   }
-  // TODO(cate): Check not full.
-  return TicTacToeGameStateNotEnded;
+  for (int x = 0; x < 3; x++) {
+    for (int y = 0; y < 3; y++) {
+      if ([board_[x][y] integerValue] == TicTacToeStateEmpty) {
+        return TicTacToeGameStateNotEnded;
+      }
+    }
+  }
+  return TicTacToeGameStateBoardFull;
 }
 
 - (TicTacToeStateType)stateForXPos:(int)x yPos:(int)y {
