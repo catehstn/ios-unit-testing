@@ -72,4 +72,9 @@
   }
 }
 
+- (void)testPlayOverOtherPlay {
+  XCTAssertTrue([board_ playXPos:1 yPos:1 toState:TicTacToeStateX]);
+  XCTAssertFalse([board_ playXPos:1 yPos:1 toState:TicTacToeStateO]);
+}
+
 @end
