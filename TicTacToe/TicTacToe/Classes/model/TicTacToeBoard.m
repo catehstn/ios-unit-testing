@@ -18,7 +18,8 @@
   if (self) {
     NSNumber *v = [NSNumber numberWithInteger:TicTacToeStateEmpty];
     NSMutableArray *vs = [NSMutableArray arrayWithArray:@[v, v, v]];
-    board_ = [NSMutableArray arrayWithArray:@[[vs mutableCopy], [vs mutableCopy], [vs mutableCopy]]];
+    board_ =
+        [NSMutableArray arrayWithArray:@[[vs mutableCopy], [vs mutableCopy], [vs mutableCopy]]];
   }
   return self;
 }
