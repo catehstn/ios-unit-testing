@@ -8,4 +8,8 @@
   [self setView:[GameView new]];
 }
 
+- (GameView *)gameView {
+  return (GameView *) [self view];
+}
+
 @end
