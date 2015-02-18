@@ -77,4 +77,24 @@
   XCTAssertFalse([board_ playXPos:1 yPos:1 toState:TicTacToeStateO]);
 }
 
+- (void)testGameStateWithSpaces {
+  XCTAssertEqual([board_ gameState], TicTacTieGameStateNotEnded);
+  XCTAssertTrue([board_ playXPos:0 yPos:0 toState:TicTacToeStateO]);
+  XCTAssertEqual([board_ gameState], TicTacTieGameStateNotEnded);
+  XCTAssertTrue([board_ playXPos:1 yPos:0 toState:TicTacToeStateO]);
+  XCTAssertEqual([board_ gameState], TicTacTieGameStateNotEnded);
+  XCTAssertTrue([board_ playXPos:0 yPos:1 toState:TicTacToeStateO]);
+  XCTAssertEqual([board_ gameState], TicTacTieGameStateNotEnded);
+  XCTAssertTrue([board_ playXPos:2 yPos:0 toState:TicTacToeStateX]);
+  XCTAssertEqual([board_ gameState], TicTacTieGameStateNotEnded);
+  XCTAssertTrue([board_ playXPos:2 yPos:1 toState:TicTacToeStateX]);
+  XCTAssertEqual([board_ gameState], TicTacTieGameStateNotEnded);
+  XCTAssertTrue([board_ playXPos:0 yPos:2 toState:TicTacToeStateX]);
+  XCTAssertEqual([board_ gameState], TicTacTieGameStateNotEnded);
+  XCTAssertTrue([board_ playXPos:1 yPos:2 toState:TicTacToeStateX]);
+  XCTAssertEqual([board_ gameState], TicTacTieGameStateNotEnded);
+  XCTAssertTrue([board_ playXPos:2 yPos:2 toState:TicTacToeStateO]);
+  XCTAssertEqual([board_ gameState], TicTacTieGameStateNotEnded);
+}
+
 @end

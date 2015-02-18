@@ -9,6 +9,15 @@ typedef NS_ENUM(NSInteger, TicTacToeStateType) {
   TicTacToeStateInvalid
 };
 
+typedef NS_ENUM(NSInteger, TicTacToeGameStateType) {
+  TicTacTieGameStateNotEnded,
+  TicTacToeGameStateBoardFull,
+  TicTacToeGameStateXWin,
+  TicTacToeGameStateOWin,
+};
+
+@property(nonatomic, readonly) TicTacToeGameStateType gameState;
+
 - (TicTacToeStateType)stateForXPos:(int)x yPos:(int)y;
 
 - (BOOL)playXPos:(int)x
