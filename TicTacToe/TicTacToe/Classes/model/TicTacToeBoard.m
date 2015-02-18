@@ -37,7 +37,7 @@
       [board_[x][y] integerValue] != TicTacToeStateEmpty) {
     return NO;
   }
-  [board_[x] setObject:[NSNumber numberWithInteger:state] atIndex:y];
+  board_[x][y] = [NSNumber numberWithInteger:state];
   return YES;
 }
 
