@@ -86,13 +86,29 @@ static const CGFloat kPadding = 5.0;
       @"d": buttonD_,
       @"g": buttonG_
   };
-  format = @"V:|-(padding)-[a]-(padding)-[d(==a)]-(padding)-[g(==a)]-(padding)-|";
+  format = @"V:[a]-(padding)-[d(==a)]-(padding)-[g(==a)]";
   option = NSLayoutFormatAlignAllLeft | NSLayoutFormatAlignAllRight;
   NSArray *vConstraints = [NSLayoutConstraint constraintsWithVisualFormat:format
                                                                   options:option
                                                                   metrics:metrics
                                                                     views:views];
   [NSLayoutConstraint activateConstraints:vConstraints];
+
+  [[NSLayoutConstraint constraintWithItem:buttonA_
+                                attribute:NSLayoutAttributeHeight
+                                relatedBy:NSLayoutRelationEqual
+                                   toItem:buttonA_
+                                attribute:NSLayoutAttributeWidth
+                               multiplier:1
+                                 constant:0] setActive:YES];
+
+  [[NSLayoutConstraint constraintWithItem:buttonE_
+                                attribute:NSLayoutAttributeCenterY
+                                relatedBy:NSLayoutRelationEqual
+                                   toItem:self
+                                attribute:NSLayoutAttributeCenterY
+                               multiplier:1
+                                 constant:0] setActive:YES];
 }
 
 - (UIButton *)createAndAddButton {
