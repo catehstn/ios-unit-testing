@@ -97,6 +97,7 @@ static const CGFloat kPadding = 5.0;
 
 - (UIButton *)createAndAddButton {
   UIButton *button = [UIButton new];
+  [button setTranslatesAutoresizingMaskIntoConstraints:NO];
   [button setBackgroundColor:[UIColor lightGrayColor]];
   [self addSubview:button];
   return button;
