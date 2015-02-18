@@ -10,7 +10,7 @@ typedef NS_ENUM(NSInteger, TicTacToeStateType) {
 };
 
 typedef NS_ENUM(NSInteger, TicTacToeGameStateType) {
-  TicTacTieGameStateNotEnded,
+  TicTacToeGameStateNotEnded,
   TicTacToeGameStateBoardFull,
   TicTacToeGameStateXWin,
   TicTacToeGameStateOWin,
