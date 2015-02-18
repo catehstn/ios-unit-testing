@@ -24,6 +24,28 @@
   return self;
 }
 
+- (TicTacToeGameStateType)gameState {
+  for (int i = 0; i < 3; i++) {
+    if (board_[i][0] == board_[i][1] && board_[i][1] == board_[i][2]) {
+      if ([board_[i][0] integerValue] == TicTacToeStateO) {
+        return TicTacToeGameStateOWin;
+      } else if ([board_[i][0] integerValue] == TicTacToeStateX) {
+        return TicTacToeGameStateXWin;
+      }
+    }
+    if (board_[0][i] == board_[1][i] && board_[1][i] == board_[2][i]) {
+      if ([board_[0][1] integerValue] == TicTacToeStateO) {
+        return TicTacToeGameStateOWin;
+      } else if ([board_[0][i] integerValue] == TicTacToeStateX) {
+        return TicTacToeGameStateXWin;
+      }
+    }
+  }
+  // TODO(cate): Check diagonals.
+  // TODO(cate): Check not full.
+  return TicTacToeGameStateNotEnded;
+}
+
 - (TicTacToeStateType)stateForXPos:(int)x yPos:(int)y {
   if (x < 0 || x > 2 || y < 0 || y > 2) {
     return TicTacToeStateInvalid;
