@@ -1,5 +1,7 @@
 #import "GameView.h"
 
+#import "TicTacToeButton.h"
+
 @interface GameView () {
   UIButton *buttonA_;
   UIButton *buttonB_;
@@ -12,7 +14,7 @@
   UIButton *buttonI_;
 }
 
-- (UIButton *)createAndAddButton;
+- (TicTacToeButton *)createAndAddButtonAtX:(NSInteger)x y:(NSInteger)y;
 - (void)createView;
 - (void)setUpConstraints;
 @end
@@ -31,15 +33,15 @@ static const CGFloat kPadding = 5.0;
 }
 
 - (void)createView {
-  buttonA_ = [self createAndAddButton];
-  buttonB_ = [self createAndAddButton];
-  buttonC_ = [self createAndAddButton];
-  buttonD_ = [self createAndAddButton];
-  buttonE_ = [self createAndAddButton];
-  buttonF_ = [self createAndAddButton];
-  buttonG_ = [self createAndAddButton];
-  buttonH_ = [self createAndAddButton];
-  buttonI_ = [self createAndAddButton];
+  buttonA_ = [self createAndAddButtonAtX:0 y:0];
+  buttonB_ = [self createAndAddButtonAtX:1 y:0];
+  buttonC_ = [self createAndAddButtonAtX:2 y:0];
+  buttonD_ = [self createAndAddButtonAtX:0 y:1];
+  buttonE_ = [self createAndAddButtonAtX:1 y:1];
+  buttonF_ = [self createAndAddButtonAtX:2 y:1];
+  buttonG_ = [self createAndAddButtonAtX:0 y:2];
+  buttonH_ = [self createAndAddButtonAtX:1 y:2];
+  buttonI_ = [self createAndAddButtonAtX:2 y:2];
 }
 
 - (void)setUpConstraints {
@@ -111,8 +113,8 @@ static const CGFloat kPadding = 5.0;
                                  constant:0] setActive:YES];
 }
 
-- (UIButton *)createAndAddButton {
-  UIButton *button = [UIButton new];
+- (TicTacToeButton *)createAndAddButtonAtX:(NSInteger)x y:(NSInteger)y {
+  TicTacToeButton *button = [[TicTacToeButton alloc] initWithX:x y:y];
   [button setTranslatesAutoresizingMaskIntoConstraints:NO];
   [button setBackgroundColor:[UIColor lightGrayColor]];
   [self addSubview:button];
