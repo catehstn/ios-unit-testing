@@ -19,6 +19,7 @@
 		4CCCD8EF1A93B7E900AB451F /* TicTacToeBoardTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCCD8EE1A93B7E900AB451F /* TicTacToeBoardTest.m */; };
 		4CCCD8F21A94C88A00AB451F /* ComputerPlayerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCCD8F11A94C88A00AB451F /* ComputerPlayerTest.m */; };
 		4CCCD8FA1A94CDAC00AB451F /* HomeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCCD8F81A94CDAC00AB451F /* HomeView.m */; };
+		4CCCD8FD1A94D56F00AB451F /* GameView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCCD8FC1A94D56F00AB451F /* GameView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,8 @@
 		4CCCD8F11A94C88A00AB451F /* ComputerPlayerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ComputerPlayerTest.m; path = model/ComputerPlayerTest.m; sourceTree = "<group>"; };
 		4CCCD8F81A94CDAC00AB451F /* HomeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeView.m; path = views/HomeView.m; sourceTree = "<group>"; };
 		4CCCD8F91A94CDAC00AB451F /* HomeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeView.h; path = views/HomeView.h; sourceTree = "<group>"; };
+		4CCCD8FB1A94D56F00AB451F /* GameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameView.h; path = views/GameView.h; sourceTree = "<group>"; };
+		4CCCD8FC1A94D56F00AB451F /* GameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameView.m; path = views/GameView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,8 +199,10 @@
 		4CCCD8F41A94CBFE00AB451F /* views */ = {
 			isa = PBXGroup;
 			children = (
-				4CCCD8F81A94CDAC00AB451F /* HomeView.m */,
 				4CCCD8F91A94CDAC00AB451F /* HomeView.h */,
+				4CCCD8F81A94CDAC00AB451F /* HomeView.m */,
+				4CCCD8FB1A94D56F00AB451F /* GameView.h */,
+				4CCCD8FC1A94D56F00AB451F /* GameView.m */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -306,6 +311,7 @@
 				4CCCD8B01A8CEC7A00AB451F /* AppDelegate.m in Sources */,
 				4CCCD8AD1A8CEC7A00AB451F /* main.m in Sources */,
 				4CCCD8E11A8CF69600AB451F /* HomePresenter.m in Sources */,
+				4CCCD8FD1A94D56F00AB451F /* GameView.m in Sources */,
 				4CCCD8E71A8CFF0400AB451F /* TicTacToeBoard.m in Sources */,
 				4CCCD8DD1A8CF5E100AB451F /* HomeViewController.m in Sources */,
 				4CCCD8EB1A8D099B00AB451F /* ComputerPlayer.m in Sources */,
