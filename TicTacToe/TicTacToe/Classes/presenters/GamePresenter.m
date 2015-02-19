@@ -8,6 +8,7 @@
 
 @interface GamePresenter () {
   TicTacToeBoard *board_;
+  BOOL computerInPlay_;
   ComputerPlayer *computerPlayer_;
   TicTacToeGameType gameType_;
   TicTacToeStateType turn_;
@@ -48,6 +49,7 @@ static const NSTimeInterval kComputerPlayDelay = 1;
   self = [super init];
   if (self) {
     board_ = board;
+    computerInPlay_ = NO;
     computerPlayer_ = computerPlayer;
     gameType_ = gameType;
     turn_ = TicTacToeStateO;
@@ -70,6 +72,10 @@ static const NSTimeInterval kComputerPlayDelay = 1;
 }
 
 - (void)buttonPressed:(id)sender {
+  // Ignore if computer is in play.
+  if (computerInPlay_) {
+    return;
+  }
   TicTacToeButton *button = (TicTacToeButton *)sender;
   // Play
   int x = [button x];
@@ -113,12 +119,15 @@ static const NSTimeInterval kComputerPlayDelay = 1;
       (gameType_ == TicTacToeGameUserX && turn_ == TicTacToeStateX)) {
     return;
   }
+
+  computerInPlay_ = YES;
   [self performSelector:@selector(playComputerTurn) withObject:nil afterDelay:kComputerPlayDelay];
 }
 
 - (void)playComputerTurn {
   [computerPlayer_ makeNextMove];
   [self handleEndOfTurn];
+  computerInPlay_ = NO;
 }
 
 - (void)updateBoard {
