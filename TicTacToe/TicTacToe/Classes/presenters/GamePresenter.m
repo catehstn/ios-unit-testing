@@ -103,8 +103,9 @@
       (gameType_ == TicTacToeGameUserX && turn_ == TicTacToeStateX)) {
     return;
   }
-  // TODO(cate): Fill this in.
-  NSLog(@"Computer should play now");
+  [computerPlayer_ makeNextMove];
+  [self updateBoard];
+  [self updateTurn];
 }
 
 - (void)updateBoard {
