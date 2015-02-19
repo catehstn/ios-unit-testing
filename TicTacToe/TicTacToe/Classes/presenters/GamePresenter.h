@@ -2,8 +2,14 @@
 
 @class GameViewController;
 
+typedef NS_ENUM(NSInteger, TicTacToeGameType) {
+  TicTacToeGameUserX,
+  TicTacToeGameUserO,
+  TicTacToeGameUserXO
+};
+
 @interface GamePresenter : CHPresenter
 
-+ (GameViewController *)createViewController;
++ (GameViewController *)createViewControllerWithGameType:(TicTacToeGameType)gameType;
 
 @end

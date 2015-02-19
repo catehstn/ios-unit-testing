@@ -8,7 +8,7 @@
 @interface HomePresenter ()
 @property(nonatomic, readonly) HomeViewController *homeViewController;
 
-- (void)pushGameViewController;
+- (void)pushGameViewControllerWithGameType:(TicTacToeGameType)gameType;
 - (void)oButtonPressed:(id)sender;
 - (void)xButtonPressed:(id)sender;
 - (void)xoButtonPressed:(id)sender;
@@ -40,26 +40,20 @@
 }
 
 - (void)oButtonPressed:(id)sender {
-  // TODO(cate): Fill this in.
-  NSLog(@"o button pressed");
-  [self pushGameViewController];
+  [self pushGameViewControllerWithGameType:TicTacToeGameUserO];
 }
 
 - (void)xButtonPressed:(id)sender {
-  // TODO(cate): Fill this in.
-  NSLog(@"x button pressed");
-  [self pushGameViewController];
+  [self pushGameViewControllerWithGameType:TicTacToeGameUserX];
 }
 
 - (void)xoButtonPressed:(id)sender {
-  // TODO(cate): Fill this in.
-  NSLog(@"xo button pressed");
-  [self pushGameViewController];
+  [self pushGameViewControllerWithGameType:TicTacToeGameUserXO];
 }
 
-- (void)pushGameViewController {
+- (void)pushGameViewControllerWithGameType:(TicTacToeGameType)gameType {
   // TODO(cate): Add options.
-  GameViewController *viewController = [GamePresenter createViewController];
+  GameViewController *viewController = [GamePresenter createViewControllerWithGameType:gameType];
   [[self viewController] pushViewController:viewController animated:YES];
 }
 

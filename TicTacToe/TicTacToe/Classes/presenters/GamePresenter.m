@@ -7,12 +7,13 @@
 
 @interface GamePresenter () {
   TicTacToeBoard *board_;
+  TicTacToeGameType gameType_;
   TicTacToeStateType turn_;
 }
 
 @property(nonatomic, readonly) GameViewController *gameViewController;
 
-- (id)initWithBoard:(TicTacToeBoard *)board;
+- (id)initWithBoard:(TicTacToeBoard *)board gameType:(TicTacToeGameType)gameType;
 - (void)buttonPressed:(id)sender;
 - (void)handlePossibleGameEnd;
 - (void)updateTurn;
@@ -21,17 +22,18 @@
 
 @implementation GamePresenter
 
-+ (GameViewController *)createViewController {
++ (GameViewController *)createViewControllerWithGameType:(TicTacToeGameType)gameType {
   // TODO(cate): Add options.
   TicTacToeBoard *board = [TicTacToeBoard new];
-  GamePresenter *presenter = [[GamePresenter alloc] initWithBoard:board];
+  GamePresenter *presenter = [[GamePresenter alloc] initWithBoard:board gameType:gameType];
   return [[GameViewController alloc] initWithPresenter:presenter];
 }
 
-- (id)initWithBoard:(TicTacToeBoard *)board {
+- (id)initWithBoard:(TicTacToeBoard *)board gameType:(TicTacToeGameType)gameType {
   self = [super init];
   if (self) {
     board_ = board;
+    gameType_ = gameType;
     turn_ = TicTacToeStateO;
   }
   return self;
