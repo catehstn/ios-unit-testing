@@ -3,17 +3,10 @@
 #import "TicTacToeButton.h"
 
 @interface GameView () {
-  UIButton *buttonA_;
-  UIButton *buttonB_;
-  UIButton *buttonC_;
-  UIButton *buttonD_;
-  UIButton *buttonE_;
-  UIButton *buttonF_;
-  UIButton *buttonG_;
-  UIButton *buttonH_;
-  UIButton *buttonI_;
+  NSArray *buttons_;
 }
 
+- (TicTacToeButton *)buttonAtX:(int)x y:(int)y;
 - (TicTacToeButton *)createAndAddButtonAtX:(NSInteger)x y:(NSInteger)y;
 - (void)createView;
 - (void)setUpConstraints;
@@ -35,22 +28,26 @@ static const CGFloat kPadding = 5.0;
 - (void)createView {
   [self setBackgroundColor:[UIColor blackColor]];
 
-  buttonA_ = [self createAndAddButtonAtX:0 y:0];
-  buttonB_ = [self createAndAddButtonAtX:1 y:0];
-  buttonC_ = [self createAndAddButtonAtX:2 y:0];
-  buttonD_ = [self createAndAddButtonAtX:0 y:1];
-  buttonE_ = [self createAndAddButtonAtX:1 y:1];
-  buttonF_ = [self createAndAddButtonAtX:2 y:1];
-  buttonG_ = [self createAndAddButtonAtX:0 y:2];
-  buttonH_ = [self createAndAddButtonAtX:1 y:2];
-  buttonI_ = [self createAndAddButtonAtX:2 y:2];
+  buttons_ = [@[[NSMutableArray arrayWithCapacity:3],
+                [NSMutableArray arrayWithCapacity:3],
+                [NSMutableArray arrayWithCapacity:3]] mutableCopy];
+
+  buttons_[0][0] = [self createAndAddButtonAtX:0 y:0];
+  buttons_[0][1] = [self createAndAddButtonAtX:1 y:0];
+  buttons_[0][2] = [self createAndAddButtonAtX:2 y:0];
+  buttons_[1][0] = [self createAndAddButtonAtX:0 y:1];
+  buttons_[1][1] = [self createAndAddButtonAtX:1 y:1];
+  buttons_[1][2] = [self createAndAddButtonAtX:2 y:1];
+  buttons_[2][0] = [self createAndAddButtonAtX:0 y:2];
+  buttons_[2][1] = [self createAndAddButtonAtX:1 y:2];
+  buttons_[2][2] = [self createAndAddButtonAtX:2 y:2];
 }
 
 - (void)setUpConstraints {
   NSDictionary *views = @{
-    @"a": buttonA_,
-    @"b": buttonB_,
-    @"c": buttonC_
+    @"a": [self buttonAtX:0 y:0],
+    @"b": [self buttonAtX:1 y:0],
+    @"c": [self buttonAtX:2 y:0]
   };
 
   NSString *format = @"|-(padding)-[a]-(padding)-[b(==a)]-(padding)-[c(==a)]-(padding)-|";
@@ -63,9 +60,9 @@ static const CGFloat kPadding = 5.0;
                                                  views:views] mutableCopy];
 
   views = @{
-      @"d": buttonD_,
-      @"e": buttonE_,
-      @"f": buttonF_
+      @"d": [self buttonAtX:0 y:1],
+      @"e": [self buttonAtX:1 y:1],
+      @"f": [self buttonAtX:2 y:1]
   };
   format = @"|-(padding)-[d]-(padding)-[e(==d)]-(padding)-[f(==d)]-(padding)-|";
   [hConstraints addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:format
@@ -73,9 +70,9 @@ static const CGFloat kPadding = 5.0;
                                                                             metrics:metrics
                                                                               views:views]];
   views = @{
-      @"g": buttonG_,
-      @"h": buttonH_,
-      @"i": buttonI_
+      @"g": [self buttonAtX:0 y:2],
+      @"h": [self buttonAtX:1 y:2],
+      @"i": [self buttonAtX:2 y:2]
   };
   format = @"|-(padding)-[g]-(padding)-[h(==g)]-(padding)-[i(==g)]-(padding)-|";
   [hConstraints addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:format
@@ -86,9 +83,9 @@ static const CGFloat kPadding = 5.0;
 
 
   views = @{
-      @"a": buttonA_,
-      @"d": buttonD_,
-      @"g": buttonG_
+      @"a": [self buttonAtX:0 y:0],
+      @"d": [self buttonAtX:0 y:1],
+      @"g": [self buttonAtX:0 y:2]
   };
   format = @"V:[a]-(padding)-[d(==a)]-(padding)-[g(==a)]";
   option = NSLayoutFormatAlignAllLeft | NSLayoutFormatAlignAllRight;
@@ -98,15 +95,15 @@ static const CGFloat kPadding = 5.0;
                                                                     views:views];
   [NSLayoutConstraint activateConstraints:vConstraints];
 
-  [[NSLayoutConstraint constraintWithItem:buttonA_
+  [[NSLayoutConstraint constraintWithItem:[self buttonAtX:0 y:0]
                                 attribute:NSLayoutAttributeHeight
                                 relatedBy:NSLayoutRelationEqual
-                                   toItem:buttonA_
+                                   toItem:[self buttonAtX:0 y:0]
                                 attribute:NSLayoutAttributeWidth
                                multiplier:1
                                  constant:0] setActive:YES];
 
-  [[NSLayoutConstraint constraintWithItem:buttonE_
+  [[NSLayoutConstraint constraintWithItem:[self buttonAtX:1 y:1]
                                 attribute:NSLayoutAttributeCenterY
                                 relatedBy:NSLayoutRelationEqual
                                    toItem:self
@@ -125,9 +122,14 @@ static const CGFloat kPadding = 5.0;
 
 #pragma mark getters
 
+- (TicTacToeButton *)buttonAtX:(int)x y:(int)y {
+  return buttons_[y][x];
+}
+
 - (NSArray *)buttons {
-  return
-      @[buttonA_, buttonB_, buttonC_, buttonD_, buttonE_, buttonF_, buttonG_, buttonH_, buttonI_];
+  return @[[self buttonAtX:0 y:0], [self buttonAtX:1 y:0], [self buttonAtX:2 y:0],
+           [self buttonAtX:0 y:1], [self buttonAtX:1 y:1], [self buttonAtX:2 y:1],
+           [self buttonAtX:0 y:2], [self buttonAtX:1 y:2], [self buttonAtX:2 y:2]];
 }
 
 @end
