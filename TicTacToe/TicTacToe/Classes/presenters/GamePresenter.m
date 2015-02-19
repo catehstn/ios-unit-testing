@@ -21,12 +21,15 @@
 - (void)buttonPressed:(id)sender;
 - (void)handlePossibleGameEnd;
 - (void)maybePlayComputerTurn;
+- (void)playComputerTurn;
 - (void)updateBoard;
 - (void)updateTurn;
 - (NSString *)valueForState:(TicTacToeStateType)state;
 @end
 
 @implementation GamePresenter
+
+static const NSTimeInterval kComputerPlayDelay = 1;
 
 + (GameViewController *)createViewControllerWithGameType:(TicTacToeGameType)gameType {
   TicTacToeBoard *board = [TicTacToeBoard new];
@@ -61,6 +64,8 @@
                action:@selector(buttonPressed:)
      forControlEvents:UIControlEventTouchUpInside];
   }
+
+  [self maybePlayComputerTurn];
 }
 
 - (void)buttonPressed:(id)sender {
@@ -103,6 +108,10 @@
       (gameType_ == TicTacToeGameUserX && turn_ == TicTacToeStateX)) {
     return;
   }
+  [self performSelector:@selector(playComputerTurn) withObject:nil afterDelay:kComputerPlayDelay];
+}
+
+- (void)playComputerTurn {
   [computerPlayer_ makeNextMove];
   [self updateBoard];
   [self updateTurn];
