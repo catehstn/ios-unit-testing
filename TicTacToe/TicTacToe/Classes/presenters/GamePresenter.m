@@ -53,13 +53,13 @@
   // Play
   int x = [button x];
   int y = [button y];
-  // TODO(cate): Handle play failing.
-  [board_ playXPos:x yPos:y toState:turn_];
-  // Change turn.
-  [self updateTurn];
-  NSString *value = [self valueForState:[board_ stateForXPos:x yPos:y]];
-  [[[self gameViewController] gameView] updateValue:value atX:x y:y];
-  // TODO(cate): Check for win conditions.
+  if ([board_ playXPos:x yPos:y toState:turn_]) {
+    // Change turn.
+    [self updateTurn];
+    NSString *value = [self valueForState:[board_ stateForXPos:x yPos:y]];
+    [[[self gameViewController] gameView] updateValue:value atX:x y:y];
+    // TODO(cate): Check for win conditions.
+  }
 }
 
 - (void)updateTurn {
