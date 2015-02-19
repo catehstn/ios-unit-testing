@@ -21,6 +21,7 @@
 - (void)buttonPressed:(id)sender;
 - (void)handlePossibleGameEnd;
 - (void)maybePlayComputerTurn;
+- (void)updateBoard;
 - (void)updateTurn;
 - (NSString *)valueForState:(TicTacToeStateType)state;
 @end
@@ -70,8 +71,7 @@
   if ([board_ playXPos:x yPos:y toState:turn_]) {
     // Change turn.
     [self updateTurn];
-    NSString *value = [self valueForState:[board_ stateForXPos:x yPos:y]];
-    [[[self gameViewController] gameView] updateValue:value atX:x y:y];
+    [self updateBoard];
     [self handlePossibleGameEnd];
     [self maybePlayComputerTurn];
   }
@@ -105,6 +105,15 @@
   }
   // TODO(cate): Fill this in.
   NSLog(@"Computer should play now");
+}
+
+- (void)updateBoard {
+  for (int x = 0; x < 3; x++) {
+    for (int y = 0; y < 3; y++) {
+      NSString *value = [self valueForState:[board_ stateForXPos:x yPos:y]];
+      [[[self gameViewController] gameView] updateValue:value atX:x y:y];
+    }
+  }
 }
 
 - (void)updateTurn {
