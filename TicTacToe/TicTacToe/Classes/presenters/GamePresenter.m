@@ -1,5 +1,6 @@
 #import "GamePresenter.h"
 
+#import "ComputerPlayer.h"
 #import "GameView.h"
 #import "GameViewController.h"
 #import "TicTacToeBoard.h"
@@ -7,13 +8,16 @@
 
 @interface GamePresenter () {
   TicTacToeBoard *board_;
+  ComputerPlayer *computerPlayer_;
   TicTacToeGameType gameType_;
   TicTacToeStateType turn_;
 }
 
 @property(nonatomic, readonly) GameViewController *gameViewController;
 
-- (id)initWithBoard:(TicTacToeBoard *)board gameType:(TicTacToeGameType)gameType;
+- (id)initWithBoard:(TicTacToeBoard *)board
+     computerPlayer:(ComputerPlayer *)computerPlayer
+           gameType:(TicTacToeGameType)gameType;
 - (void)buttonPressed:(id)sender;
 - (void)handlePossibleGameEnd;
 - (void)maybePlayComputerTurn;
@@ -26,14 +30,21 @@
 + (GameViewController *)createViewControllerWithGameType:(TicTacToeGameType)gameType {
   // TODO(cate): Add options.
   TicTacToeBoard *board = [TicTacToeBoard new];
-  GamePresenter *presenter = [[GamePresenter alloc] initWithBoard:board gameType:gameType];
+  TicTacToeStateType type = (gameType == TicTacToeGameUserO) ? TicTacToeStateX : TicTacToeStateO;
+  ComputerPlayer *computerPlayer = [[ComputerPlayer alloc] initWithBoard:board type:type];
+  GamePresenter *presenter = [[GamePresenter alloc] initWithBoard:board
+                                                   computerPlayer:computerPlayer
+                                                         gameType:gameType];
   return [[GameViewController alloc] initWithPresenter:presenter];
 }
 
-- (id)initWithBoard:(TicTacToeBoard *)board gameType:(TicTacToeGameType)gameType {
+- (id)initWithBoard:(TicTacToeBoard *)board
+     computerPlayer:(ComputerPlayer *)computerPlayer
+           gameType:(TicTacToeGameType)gameType {
   self = [super init];
   if (self) {
     board_ = board;
+    computerPlayer_ = computerPlayer;
     gameType_ = gameType;
     turn_ = TicTacToeStateO;
   }
