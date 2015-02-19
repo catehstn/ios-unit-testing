@@ -100,7 +100,7 @@
 - (void)maybePlayComputerTurn {
   if (gameType_ == TicTacToeGameUserXO ||
       (gameType_ == TicTacToeGameUserO && turn_ == TicTacToeStateO) ||
-      (gameType_ == TicTacToeStateX && turn_ == TicTacToeStateX)) {
+      (gameType_ == TicTacToeGameUserX && turn_ == TicTacToeStateX)) {
     return;
   }
   // TODO(cate): Fill this in.
