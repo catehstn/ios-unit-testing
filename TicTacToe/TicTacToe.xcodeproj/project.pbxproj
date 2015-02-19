@@ -23,6 +23,8 @@
 		4CCCD9001A94D90C00AB451F /* GamePresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCCD8FF1A94D90C00AB451F /* GamePresenter.m */; };
 		4CCCD9031A94D92F00AB451F /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCCD9021A94D92F00AB451F /* GameViewController.m */; };
 		4CCCD9061A94DD5C00AB451F /* TicTacToeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCCD9051A94DD5C00AB451F /* TicTacToeButton.m */; };
+		4CCCD9091A962CC500AB451F /* EndGamePresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCCD9081A962CC500AB451F /* EndGamePresenter.m */; };
+		4CCCD90C1A962CDB00AB451F /* EndGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCCD90B1A962CDB00AB451F /* EndGameViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +70,10 @@
 		4CCCD9021A94D92F00AB451F /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
 		4CCCD9041A94DD5C00AB451F /* TicTacToeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TicTacToeButton.h; path = views/TicTacToeButton.h; sourceTree = "<group>"; };
 		4CCCD9051A94DD5C00AB451F /* TicTacToeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TicTacToeButton.m; path = views/TicTacToeButton.m; sourceTree = "<group>"; };
+		4CCCD9071A962CC500AB451F /* EndGamePresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EndGamePresenter.h; path = presenters/EndGamePresenter.h; sourceTree = "<group>"; };
+		4CCCD9081A962CC500AB451F /* EndGamePresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EndGamePresenter.m; path = presenters/EndGamePresenter.m; sourceTree = "<group>"; };
+		4CCCD90A1A962CDB00AB451F /* EndGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EndGameViewController.h; sourceTree = "<group>"; };
+		4CCCD90B1A962CDB00AB451F /* EndGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EndGameViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +180,8 @@
 				4CCCD8DC1A8CF5E100AB451F /* HomeViewController.m */,
 				4CCCD9011A94D92F00AB451F /* GameViewController.h */,
 				4CCCD9021A94D92F00AB451F /* GameViewController.m */,
+				4CCCD90A1A962CDB00AB451F /* EndGameViewController.h */,
+				4CCCD90B1A962CDB00AB451F /* EndGameViewController.m */,
 			);
 			name = viewcontrollers;
 			sourceTree = "<group>";
@@ -185,6 +193,8 @@
 				4CCCD8E01A8CF69600AB451F /* HomePresenter.m */,
 				4CCCD8FE1A94D90C00AB451F /* GamePresenter.h */,
 				4CCCD8FF1A94D90C00AB451F /* GamePresenter.m */,
+				4CCCD9071A962CC500AB451F /* EndGamePresenter.h */,
+				4CCCD9081A962CC500AB451F /* EndGamePresenter.m */,
 			);
 			name = presenters;
 			sourceTree = "<group>";
@@ -324,6 +334,7 @@
 				4CCCD9001A94D90C00AB451F /* GamePresenter.m in Sources */,
 				4CCCD8D71A8CEE1200AB451F /* CHPresenter.m in Sources */,
 				4CCCD8D81A8CEE1200AB451F /* CHViewController.m in Sources */,
+				4CCCD90C1A962CDB00AB451F /* EndGameViewController.m in Sources */,
 				4CCCD9031A94D92F00AB451F /* GameViewController.m in Sources */,
 				4CCCD8B01A8CEC7A00AB451F /* AppDelegate.m in Sources */,
 				4CCCD8AD1A8CEC7A00AB451F /* main.m in Sources */,
@@ -332,6 +343,7 @@
 				4CCCD8FD1A94D56F00AB451F /* GameView.m in Sources */,
 				4CCCD8E71A8CFF0400AB451F /* TicTacToeBoard.m in Sources */,
 				4CCCD8DD1A8CF5E100AB451F /* HomeViewController.m in Sources */,
+				4CCCD9091A962CC500AB451F /* EndGamePresenter.m in Sources */,
 				4CCCD8EB1A8D099B00AB451F /* ComputerPlayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

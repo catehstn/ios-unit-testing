@@ -1,6 +1,8 @@
 #import "GamePresenter.h"
 
 #import "ComputerPlayer.h"
+#import "EndGamePresenter.h"
+#import "EndGameViewController.h"
 #import "GameView.h"
 #import "GameViewController.h"
 #import "TicTacToeBoard.h"
@@ -20,6 +22,7 @@
      computerPlayer:(ComputerPlayer *)computerPlayer
            gameType:(TicTacToeGameType)gameType;
 - (void)buttonPressed:(id)sender;
+- (void)gameOverWithState:(TicTacToeGameStateType)state;
 - (void)handleEndOfTurn;
 - (void)handlePossibleGameEnd;
 - (void)maybePlayComputerTurn;
@@ -86,6 +89,12 @@ static const NSTimeInterval kComputerPlayDelay = 1;
   }
 }
 
+- (void)gameOverWithState:(TicTacToeGameStateType)state {
+  // TODO(cate): Use state.
+  EndGameViewController *viewController = [EndGamePresenter createViewController];
+  [[self viewController] pushViewController:viewController animated:YES];
+}
+
 - (void)handleEndOfTurn {
   // Change turn.
   [self updateTurn];
@@ -95,21 +104,8 @@ static const NSTimeInterval kComputerPlayDelay = 1;
 
 - (void)handlePossibleGameEnd {
   TicTacToeGameStateType gameState = [board_ gameState];
-  switch (gameState) {
-    case TicTacToeGameStateNotEnded:
-      return;
-    case TicTacToeGameStateBoardFull:
-      // TODO(cate): Fill this in.
-      NSLog(@"nobody wins");
-      return;
-    case TicTacToeGameStateOWin:
-      // TODO(cate): Fill this in.
-      NSLog(@"O wins");
-      return;
-    case TicTacToeGameStateXWin:
-      // TODO(cate): Fill this in.
-      NSLog(@"X wins");
-      return;
+  if (gameState != TicTacToeGameStateNotEnded) {
+    [self gameOverWithState:gameState];
   }
 }
 
