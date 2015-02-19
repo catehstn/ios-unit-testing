@@ -16,6 +16,7 @@
 - (id)initWithBoard:(TicTacToeBoard *)board gameType:(TicTacToeGameType)gameType;
 - (void)buttonPressed:(id)sender;
 - (void)handlePossibleGameEnd;
+- (void)maybePlayComputerTurn;
 - (void)updateTurn;
 - (NSString *)valueForState:(TicTacToeStateType)state;
 @end
@@ -62,6 +63,7 @@
     NSString *value = [self valueForState:[board_ stateForXPos:x yPos:y]];
     [[[self gameViewController] gameView] updateValue:value atX:x y:y];
     [self handlePossibleGameEnd];
+    [self maybePlayComputerTurn];
   }
 }
 
@@ -83,6 +85,16 @@
       NSLog(@"X wins");
       return;
   }
+}
+
+- (void)maybePlayComputerTurn {
+  if (gameType_ == TicTacToeGameUserXO ||
+      (gameType_ == TicTacToeGameUserO && turn_ == TicTacToeStateO) ||
+      (gameType_ == TicTacToeStateX && turn_ == TicTacToeStateX)) {
+    return;
+  }
+  // TODO(cate): Fill this in.
+  NSLog(@"Computer should play now");
 }
 
 - (void)updateTurn {
