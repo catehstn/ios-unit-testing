@@ -132,4 +132,10 @@ static const CGFloat kPadding = 5.0;
            [self buttonAtX:0 y:2], [self buttonAtX:1 y:2], [self buttonAtX:2 y:2]];
 }
 
+#pragma mark update state
+
+- (void)updateValue:(NSString *)value atX :(int)x y:(int)y {
+  [[self buttonAtX:x y:y] setTitle:value forState:UIControlStateNormal];
+}
+
 @end

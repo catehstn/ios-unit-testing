@@ -15,6 +15,7 @@
 - (id)initWithBoard:(TicTacToeBoard *)board;
 - (void)buttonPressed:(id)sender;
 - (void)updateTurn;
+- (NSString *)valueForState:(TicTacToeStateType)state;
 @end
 
 @implementation GamePresenter
@@ -50,15 +51,30 @@
 - (void)buttonPressed:(id)sender {
   TicTacToeButton *button = (TicTacToeButton *)sender;
   // Play
-  [board_ playXPos:[button x] yPos:[button y] toState:turn_];
+  int x = [button x];
+  int y = [button y];
+  // TODO(cate): Handle play failing.
+  [board_ playXPos:x yPos:y toState:turn_];
   // Change turn.
   [self updateTurn];
-  // TODO(cate): Update display.
+  NSString *value = [self valueForState:[board_ stateForXPos:x yPos:y]];
+  [[[self gameViewController] gameView] updateValue:value atX:x y:y];
   // TODO(cate): Check for win conditions.
 }
 
 - (void)updateTurn {
   turn_ = (turn_ == TicTacToeStateO) ? TicTacToeStateX : TicTacToeStateO;
+}
+
+- (NSString *)valueForState:(TicTacToeStateType)state {
+  switch (state) {
+    case TicTacToeStateO:
+      return @"O";
+    case TicTacToeStateX:
+      return @"X";
+    default:
+      return @"";
+  }
 }
 
 @end
