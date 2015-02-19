@@ -14,6 +14,7 @@
 
 - (id)initWithBoard:(TicTacToeBoard *)board;
 - (void)buttonPressed:(id)sender;
+- (void)handlePossibleGameEnd;
 - (void)updateTurn;
 - (NSString *)valueForState:(TicTacToeStateType)state;
 @end
@@ -58,7 +59,27 @@
     [self updateTurn];
     NSString *value = [self valueForState:[board_ stateForXPos:x yPos:y]];
     [[[self gameViewController] gameView] updateValue:value atX:x y:y];
-    // TODO(cate): Check for win conditions.
+    [self handlePossibleGameEnd];
+  }
+}
+
+- (void)handlePossibleGameEnd {
+  TicTacToeGameStateType gameState = [board_ gameState];
+  switch (gameState) {
+    case TicTacToeGameStateNotEnded:
+      return;
+    case TicTacToeGameStateBoardFull:
+      // TODO(cate): Fill this in.
+      NSLog(@"nobody wins");
+      return;
+    case TicTacToeGameStateOWin:
+      // TODO(cate): Fill this in.
+      NSLog(@"O wins");
+      return;
+    case TicTacToeGameStateXWin:
+      // TODO(cate): Fill this in.
+      NSLog(@"X wins");
+      return;
   }
 }
 
