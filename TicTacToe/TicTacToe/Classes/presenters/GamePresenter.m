@@ -19,6 +19,7 @@
      computerPlayer:(ComputerPlayer *)computerPlayer
            gameType:(TicTacToeGameType)gameType;
 - (void)buttonPressed:(id)sender;
+- (void)handleEndOfTurn;
 - (void)handlePossibleGameEnd;
 - (void)maybePlayComputerTurn;
 - (void)playComputerTurn;
@@ -74,12 +75,16 @@ static const NSTimeInterval kComputerPlayDelay = 1;
   int x = [button x];
   int y = [button y];
   if ([board_ playXPos:x yPos:y toState:turn_]) {
-    // Change turn.
-    [self updateTurn];
-    [self updateBoard];
-    [self handlePossibleGameEnd];
+    [self handleEndOfTurn];
     [self maybePlayComputerTurn];
   }
+}
+
+- (void)handleEndOfTurn {
+  // Change turn.
+  [self updateTurn];
+  [self updateBoard];
+  [self handlePossibleGameEnd];
 }
 
 - (void)handlePossibleGameEnd {
@@ -113,8 +118,7 @@ static const NSTimeInterval kComputerPlayDelay = 1;
 
 - (void)playComputerTurn {
   [computerPlayer_ makeNextMove];
-  [self updateBoard];
-  [self updateTurn];
+  [self handleEndOfTurn];
 }
 
 - (void)updateBoard {
