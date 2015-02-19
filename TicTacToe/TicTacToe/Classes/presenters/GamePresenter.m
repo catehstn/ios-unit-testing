@@ -28,7 +28,6 @@
 @implementation GamePresenter
 
 + (GameViewController *)createViewControllerWithGameType:(TicTacToeGameType)gameType {
-  // TODO(cate): Add options.
   TicTacToeBoard *board = [TicTacToeBoard new];
   TicTacToeStateType type = (gameType == TicTacToeGameUserO) ? TicTacToeStateX : TicTacToeStateO;
   ComputerPlayer *computerPlayer = [[ComputerPlayer alloc] initWithBoard:board type:type];
