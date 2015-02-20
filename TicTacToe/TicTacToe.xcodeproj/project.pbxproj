@@ -34,6 +34,7 @@
 		4CCCD9281A978A6500AB451F /* GamePresenterTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCCD9271A978A6500AB451F /* GamePresenterTest.m */; };
 		4CCCD92A1A97930B00AB451F /* EndGamePresenterTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCCD9291A97930B00AB451F /* EndGamePresenterTest.m */; };
 		4CCCD92C1A9795F000AB451F /* HomeViewControllerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCCD92B1A9795F000AB451F /* HomeViewControllerTest.m */; };
+		4CCCD92E1A97A76F00AB451F /* GameViewControllerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCCD92D1A97A76F00AB451F /* GameViewControllerTest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +101,7 @@
 		4CCCD9271A978A6500AB451F /* GamePresenterTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GamePresenterTest.m; path = presenters/GamePresenterTest.m; sourceTree = "<group>"; };
 		4CCCD9291A97930B00AB451F /* EndGamePresenterTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EndGamePresenterTest.m; path = presenters/EndGamePresenterTest.m; sourceTree = "<group>"; };
 		4CCCD92B1A9795F000AB451F /* HomeViewControllerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeViewControllerTest.m; path = viewcontrollers/HomeViewControllerTest.m; sourceTree = "<group>"; };
+		4CCCD92D1A97A76F00AB451F /* GameViewControllerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameViewControllerTest.m; path = viewcontrollers/GameViewControllerTest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -312,6 +314,7 @@
 			isa = PBXGroup;
 			children = (
 				4CCCD92B1A9795F000AB451F /* HomeViewControllerTest.m */,
+				4CCCD92D1A97A76F00AB451F /* GameViewControllerTest.m */,
 			);
 			name = viewcontrollers;
 			sourceTree = "<group>";
@@ -445,6 +448,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CCCD92E1A97A76F00AB451F /* GameViewControllerTest.m in Sources */,
 				4CCCD8EF1A93B7E900AB451F /* TicTacToeBoardTest.m in Sources */,
 				4CCCD91D1A97722B00AB451F /* GameViewTest.m in Sources */,
 				4CCCD92A1A97930B00AB451F /* EndGamePresenterTest.m in Sources */,
