@@ -153,8 +153,11 @@
 		4CCCD8C31A8CEC7A00AB451F /* TicTacToeTests */ = {
 			isa = PBXGroup;
 			children = (
-				4CCCD91B1A9771C000AB451F /* views */,
+				4CCCD9201A97774800AB451F /* infrastructure */,
 				4CCCD8F01A93B7F000AB451F /* model */,
+				4CCCD91E1A9776F000AB451F /* presenters */,
+				4CCCD91F1A97773B00AB451F /* viewcontrollers */,
+				4CCCD91B1A9771C000AB451F /* views */,
 				4CCCD8C41A8CEC7A00AB451F /* Supporting Files */,
 			);
 			path = TicTacToeTests;
@@ -171,11 +174,11 @@
 		4CCCD8D11A8CEE1200AB451F /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				4CCCD8F41A94CBFE00AB451F /* views */,
+				4CCCD8D21A8CEE1200AB451F /* infrastructure */,
 				4CCCD8E41A8CFED300AB451F /* model */,
 				4CCCD8E21A8CF6A100AB451F /* presenters */,
-				4CCCD8D21A8CEE1200AB451F /* infrastructure */,
 				4CCCD8DE1A8CF5E900AB451F /* viewcontrollers */,
+				4CCCD8F41A94CBFE00AB451F /* views */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -281,6 +284,27 @@
 				4CCCD91C1A97722B00AB451F /* GameViewTest.m */,
 			);
 			name = views;
+			sourceTree = "<group>";
+		};
+		4CCCD91E1A9776F000AB451F /* presenters */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = presenters;
+			sourceTree = "<group>";
+		};
+		4CCCD91F1A97773B00AB451F /* viewcontrollers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = viewcontrollers;
+			sourceTree = "<group>";
+		};
+		4CCCD9201A97774800AB451F /* infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = infrastructure;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
