@@ -25,6 +25,8 @@
 		4CCCD9061A94DD5C00AB451F /* TicTacToeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCCD9051A94DD5C00AB451F /* TicTacToeButton.m */; };
 		4CCCD9091A962CC500AB451F /* EndGamePresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCCD9081A962CC500AB451F /* EndGamePresenter.m */; };
 		4CCCD90C1A962CDB00AB451F /* EndGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCCD90B1A962CDB00AB451F /* EndGameViewController.m */; };
+		4CCCD9191A976F6400AB451F /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CCCD90E1A976F6400AB451F /* libOCMock.a */; };
+		4CCCD91A1A976F9900AB451F /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CCCD90E1A976F6400AB451F /* libOCMock.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +76,16 @@
 		4CCCD9081A962CC500AB451F /* EndGamePresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EndGamePresenter.m; path = presenters/EndGamePresenter.m; sourceTree = "<group>"; };
 		4CCCD90A1A962CDB00AB451F /* EndGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EndGameViewController.h; sourceTree = "<group>"; };
 		4CCCD90B1A962CDB00AB451F /* EndGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EndGameViewController.m; sourceTree = "<group>"; };
+		4CCCD90E1A976F6400AB451F /* libOCMock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libOCMock.a; sourceTree = "<group>"; };
+		4CCCD9101A976F6400AB451F /* NSNotificationCenter+OCMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNotificationCenter+OCMAdditions.h"; sourceTree = "<group>"; };
+		4CCCD9111A976F6400AB451F /* OCMArg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMArg.h; sourceTree = "<group>"; };
+		4CCCD9121A976F6400AB451F /* OCMConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMConstraint.h; sourceTree = "<group>"; };
+		4CCCD9131A976F6400AB451F /* OCMLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMLocation.h; sourceTree = "<group>"; };
+		4CCCD9141A976F6400AB451F /* OCMMacroState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMMacroState.h; sourceTree = "<group>"; };
+		4CCCD9151A976F6400AB451F /* OCMock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMock.h; sourceTree = "<group>"; };
+		4CCCD9161A976F6400AB451F /* OCMockObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMockObject.h; sourceTree = "<group>"; };
+		4CCCD9171A976F6400AB451F /* OCMRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMRecorder.h; sourceTree = "<group>"; };
+		4CCCD9181A976F6400AB451F /* OCMStubRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMStubRecorder.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CCCD9191A976F6400AB451F /* libOCMock.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CCCD91A1A976F9900AB451F /* libOCMock.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +111,7 @@
 		4CCCD89E1A8CEC7A00AB451F = {
 			isa = PBXGroup;
 			children = (
+				4CCCD90D1A976F6400AB451F /* includes */,
 				4CCCD8A91A8CEC7A00AB451F /* TicTacToe */,
 				4CCCD8C31A8CEC7A00AB451F /* TicTacToeTests */,
 				4CCCD8A81A8CEC7A00AB451F /* Products */,
@@ -230,6 +245,31 @@
 				4CCCD9051A94DD5C00AB451F /* TicTacToeButton.m */,
 			);
 			name = views;
+			sourceTree = "<group>";
+		};
+		4CCCD90D1A976F6400AB451F /* includes */ = {
+			isa = PBXGroup;
+			children = (
+				4CCCD90E1A976F6400AB451F /* libOCMock.a */,
+				4CCCD90F1A976F6400AB451F /* OCMock */,
+			);
+			path = includes;
+			sourceTree = "<group>";
+		};
+		4CCCD90F1A976F6400AB451F /* OCMock */ = {
+			isa = PBXGroup;
+			children = (
+				4CCCD9101A976F6400AB451F /* NSNotificationCenter+OCMAdditions.h */,
+				4CCCD9111A976F6400AB451F /* OCMArg.h */,
+				4CCCD9121A976F6400AB451F /* OCMConstraint.h */,
+				4CCCD9131A976F6400AB451F /* OCMLocation.h */,
+				4CCCD9141A976F6400AB451F /* OCMMacroState.h */,
+				4CCCD9151A976F6400AB451F /* OCMock.h */,
+				4CCCD9161A976F6400AB451F /* OCMockObject.h */,
+				4CCCD9171A976F6400AB451F /* OCMRecorder.h */,
+				4CCCD9181A976F6400AB451F /* OCMStubRecorder.h */,
+			);
+			path = OCMock;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -450,6 +490,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TicTacToe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/includes",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -460,6 +504,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TicTacToe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/includes",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -476,8 +524,23 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(PROJECT_DIR)/includes",
+				);
 				INFOPLIST_FILE = TicTacToeTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/includes",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					XCTest,
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TicTacToe.app/TicTacToe";
 			};
@@ -491,8 +554,23 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(PROJECT_DIR)/includes",
+				);
 				INFOPLIST_FILE = TicTacToeTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/includes",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					XCTest,
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TicTacToe.app/TicTacToe";
 			};
