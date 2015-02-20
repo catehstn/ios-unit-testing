@@ -2,6 +2,8 @@
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 
+#import "GamePresenter.h"
+#import "GameViewController.h"
 #import "HomePresenter.h"
 #import "HomeView.h"
 #import "HomeViewController.h"
@@ -64,6 +66,31 @@
   [presenter_ viewLoaded];
 
   OCMVerifyAll(mockOButton);
+  OCMVerifyAll(mockXButton);
+  OCMVerifyAll(mockXOButton);
+}
+
+- (void)testOButtonPressed {
+  UIButton *oButton = [UIButton new];
+  id mockXButton = OCMClassMock([UIButton class]);
+  id mockXOButton = OCMClassMock([UIButton class]);
+
+  OCMStub([mockView_ playOButton]).andReturn(oButton);
+  OCMStub([mockView_ playXButton]).andReturn(mockXButton);
+  OCMStub([mockView_ playXOButton]).andReturn(mockXOButton);
+
+  BOOL (^verifyGameType)(id) = ^BOOL(id obj) {
+      GameViewController *gameViewController = (GameViewController *) obj;
+      GamePresenter *presenter = (GamePresenter *) [gameViewController presenter];
+      XCTAssertEqual([presenter gameType], TicTacToeGameUserO);
+  };
+  OCMExpect([mockViewController_ pushViewController:[OCMArg checkWithBlock:verifyGameType]
+                                           animated:YES]);
+
+  [presenter_ viewLoaded];
+
+  [oButton sendActionsForControlEvents:UIControlEventTouchUpInside];
+
   OCMVerifyAll(mockXButton);
   OCMVerifyAll(mockXOButton);
 }
