@@ -95,4 +95,29 @@
   OCMVerifyAll(mockXOButton);
 }
 
+- (void)testXButtonPressed {
+  UIButton *xButton = [UIButton new];
+  id mockOButton = OCMClassMock([UIButton class]);
+  id mockXOButton = OCMClassMock([UIButton class]);
+
+  OCMStub([mockView_ playOButton]).andReturn(mockOButton);
+  OCMStub([mockView_ playXButton]).andReturn(xButton);
+  OCMStub([mockView_ playXOButton]).andReturn(mockXOButton);
+
+  BOOL (^verifyGameType)(id) = ^BOOL(id obj) {
+    GameViewController *gameViewController = (GameViewController *) obj;
+    GamePresenter *presenter = (GamePresenter *) [gameViewController presenter];
+    XCTAssertEqual([presenter gameType], TicTacToeGameUserX);
+  };
+  OCMExpect([mockViewController_ pushViewController:[OCMArg checkWithBlock:verifyGameType]
+                                           animated:YES]);
+
+  [presenter_ viewLoaded];
+
+  [xButton sendActionsForControlEvents:UIControlEventTouchUpInside];
+
+  OCMVerifyAll(mockOButton);
+  OCMVerifyAll(mockXOButton);
+}
+
 @end
