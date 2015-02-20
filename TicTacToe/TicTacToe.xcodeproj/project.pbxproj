@@ -27,6 +27,7 @@
 		4CCCD90C1A962CDB00AB451F /* EndGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCCD90B1A962CDB00AB451F /* EndGameViewController.m */; };
 		4CCCD9191A976F6400AB451F /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CCCD90E1A976F6400AB451F /* libOCMock.a */; };
 		4CCCD91A1A976F9900AB451F /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CCCD90E1A976F6400AB451F /* libOCMock.a */; };
+		4CCCD91D1A97722B00AB451F /* GameViewTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCCD91C1A97722B00AB451F /* GameViewTest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +87,7 @@
 		4CCCD9161A976F6400AB451F /* OCMockObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMockObject.h; sourceTree = "<group>"; };
 		4CCCD9171A976F6400AB451F /* OCMRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMRecorder.h; sourceTree = "<group>"; };
 		4CCCD9181A976F6400AB451F /* OCMStubRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMStubRecorder.h; sourceTree = "<group>"; };
+		4CCCD91C1A97722B00AB451F /* GameViewTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameViewTest.m; path = views/GameViewTest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +153,7 @@
 		4CCCD8C31A8CEC7A00AB451F /* TicTacToeTests */ = {
 			isa = PBXGroup;
 			children = (
+				4CCCD91B1A9771C000AB451F /* views */,
 				4CCCD8F01A93B7F000AB451F /* model */,
 				4CCCD8C41A8CEC7A00AB451F /* Supporting Files */,
 			);
@@ -270,6 +273,14 @@
 				4CCCD9181A976F6400AB451F /* OCMStubRecorder.h */,
 			);
 			path = OCMock;
+			sourceTree = "<group>";
+		};
+		4CCCD91B1A9771C000AB451F /* views */ = {
+			isa = PBXGroup;
+			children = (
+				4CCCD91C1A97722B00AB451F /* GameViewTest.m */,
+			);
+			name = views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -393,6 +404,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CCCD8EF1A93B7E900AB451F /* TicTacToeBoardTest.m in Sources */,
+				4CCCD91D1A97722B00AB451F /* GameViewTest.m in Sources */,
 				4CCCD8F21A94C88A00AB451F /* ComputerPlayerTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
