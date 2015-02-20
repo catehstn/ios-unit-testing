@@ -28,6 +28,7 @@
 		4CCCD9191A976F6400AB451F /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CCCD90E1A976F6400AB451F /* libOCMock.a */; };
 		4CCCD91A1A976F9900AB451F /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CCCD90E1A976F6400AB451F /* libOCMock.a */; };
 		4CCCD91D1A97722B00AB451F /* GameViewTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCCD91C1A97722B00AB451F /* GameViewTest.m */; };
+		4CCCD9221A97777400AB451F /* CHPresenterTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCCD9211A97777400AB451F /* CHPresenterTest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +89,7 @@
 		4CCCD9171A976F6400AB451F /* OCMRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMRecorder.h; sourceTree = "<group>"; };
 		4CCCD9181A976F6400AB451F /* OCMStubRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMStubRecorder.h; sourceTree = "<group>"; };
 		4CCCD91C1A97722B00AB451F /* GameViewTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameViewTest.m; path = views/GameViewTest.m; sourceTree = "<group>"; };
+		4CCCD9211A97777400AB451F /* CHPresenterTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CHPresenterTest.m; path = infrastructure/CHPresenterTest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -303,6 +305,7 @@
 		4CCCD9201A97774800AB451F /* infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				4CCCD9211A97777400AB451F /* CHPresenterTest.m */,
 			);
 			name = infrastructure;
 			sourceTree = "<group>";
@@ -430,6 +433,7 @@
 				4CCCD8EF1A93B7E900AB451F /* TicTacToeBoardTest.m in Sources */,
 				4CCCD91D1A97722B00AB451F /* GameViewTest.m in Sources */,
 				4CCCD8F21A94C88A00AB451F /* ComputerPlayerTest.m in Sources */,
+				4CCCD9221A97777400AB451F /* CHPresenterTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
