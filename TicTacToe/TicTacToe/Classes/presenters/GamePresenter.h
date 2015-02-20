@@ -10,6 +10,8 @@ typedef NS_ENUM(NSInteger, TicTacToeGameType) {
 
 @interface GamePresenter : CHPresenter
 
+@property(nonatomic, readonly) TicTacToeGameType gameType;
+
 + (GameViewController *)createViewControllerWithGameType:(TicTacToeGameType)gameType;
 
 @end

@@ -34,6 +34,8 @@
 
 @implementation GamePresenter
 
+@synthesize gameType = gameType_;
+
 static const NSTimeInterval kComputerPlayDelay = 1;
 
 + (GameViewController *)createViewControllerWithGameType:(TicTacToeGameType)gameType {
