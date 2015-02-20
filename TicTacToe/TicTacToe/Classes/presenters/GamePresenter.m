@@ -18,9 +18,6 @@
 
 @property(nonatomic, readonly) GameViewController *gameViewController;
 
-- (id)initWithBoard:(TicTacToeBoard *)board
-     computerPlayer:(ComputerPlayer *)computerPlayer
-           gameType:(TicTacToeGameType)gameType;
 - (void)buttonPressed:(id)sender;
 - (void)gameOverWithState:(TicTacToeGameStateType)state;
 - (void)handleEndOfTurn;
