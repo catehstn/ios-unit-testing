@@ -26,10 +26,12 @@
   mockComputerPlayer_ = OCMStrictClassMock([ComputerPlayer class]);
   mockView_ = OCMStrictClassMock([GameView class]);
   mockViewController_ = OCMStrictClassMock([GameViewController class]);
+  OCMStub([mockViewController_ gameView]).andReturn(mockView_);
 
   presenter_ = [[GamePresenter alloc] initWithBoard:mockBoard_
                                      computerPlayer:mockComputerPlayer_
                                            gameType:TicTacToeGameUserO];
+  [presenter_ setViewController:mockViewController_];
 }
 
 - (void)tearDown {
