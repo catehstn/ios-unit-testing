@@ -52,7 +52,6 @@
 }
 
 - (void)pushGameViewControllerWithGameType:(TicTacToeGameType)gameType {
-  // TODO(cate): Add options.
   GameViewController *viewController = [GamePresenter createViewControllerWithGameType:gameType];
   [[self viewController] pushViewController:viewController animated:YES];
 }
