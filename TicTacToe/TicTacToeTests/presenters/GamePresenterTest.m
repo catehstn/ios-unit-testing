@@ -43,7 +43,7 @@
   [super tearDown];
 }
 
-- (void)testCreateVieControllerUserO {
+- (void)testCreateViewControllerUserO {
   GameViewController *viewController =
       [GamePresenter createViewControllerWithGameType:TicTacToeGameUserO];
   XCTAssertNotNil(viewController);
@@ -54,7 +54,7 @@
   XCTAssertEqual([presenter gameType], TicTacToeGameUserO);
 }
 
-- (void)testCreateVieControllerUserX {
+- (void)testCreateViewControllerUserX {
   GameViewController *viewController =
   [GamePresenter createViewControllerWithGameType:TicTacToeGameUserX];
   XCTAssertNotNil(viewController);
@@ -65,7 +65,7 @@
   XCTAssertEqual([presenter gameType], TicTacToeGameUserX);
 }
 
-- (void)testCreateVieControllerUserXO {
+- (void)testCreateViewControllerUserXO {
   GameViewController *viewController =
   [GamePresenter createViewControllerWithGameType:TicTacToeGameUserXO];
   XCTAssertNotNil(viewController);
