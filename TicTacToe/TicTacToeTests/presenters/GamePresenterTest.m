@@ -214,4 +214,29 @@
   [button2 sendActionsForControlEvents:UIControlEventTouchUpInside];
 }
 
+- (void)testButtonPressedUserThenComputer {
+  XCTestExpectation *expectation =
+      [self expectationWithDescription:@"testButtonPressedUserThenComputer"];
+
+  TicTacToeButton *button = [[TicTacToeButton alloc] initWithX:1 y:2];
+
+  OCMExpect([mockView_ buttons]).andReturn(@[button]);
+
+  [presenter_ viewLoaded];
+
+  OCMExpect([mockBoard_ playXPos:1 yPos:2 toState:TicTacToeStateO]).andReturn(YES);
+  OCMExpect([mockViewController_ updateDisplayFromBoard:mockBoard_]);
+  OCMExpect([mockBoard_ gameState]).andReturn(TicTacToeGameStateNotEnded);
+  OCMExpect([mockComputerPlayer_ makeNextMove]);
+  OCMExpect([mockViewController_ updateDisplayFromBoard:mockBoard_])
+      .andDo(^(NSInvocation *invocation){
+          [expectation fulfill];
+      });
+  OCMExpect([mockBoard_ gameState]).andReturn(TicTacToeGameStateNotEnded);
+
+  [button sendActionsForControlEvents:UIControlEventTouchUpInside];
+
+  [self waitForExpectationsWithTimeout:2 handler:nil];
+}
+
 @end
