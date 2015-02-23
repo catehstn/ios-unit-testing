@@ -178,9 +178,11 @@
                                            gameType:TicTacToeGameUserXO];
   [presenter_ setViewController:mockViewController_];
 
-  TicTacToeButton *button = [[TicTacToeButton alloc] initWithX:1 y:2];
+  TicTacToeButton *button1 = [[TicTacToeButton alloc] initWithX:1 y:2];
+  TicTacToeButton *button2 = [[TicTacToeButton alloc] initWithX:2 y:0];
+  NSArray *buttons = @[button1, button2];
 
-  OCMExpect([mockView_ buttons]).andReturn(@[button]);
+  OCMExpect([mockView_ buttons]).andReturn(buttons);
 
   [presenter_ viewLoaded];
 
@@ -188,7 +190,13 @@
   OCMExpect([mockViewController_ updateDisplayFromBoard:mockBoard_]);
   OCMExpect([mockBoard_ gameState]).andReturn(TicTacToeGameStateNotEnded);
 
-  [button sendActionsForControlEvents:UIControlEventTouchUpInside];
+  [button1 sendActionsForControlEvents:UIControlEventTouchUpInside];
+
+  OCMExpect([mockBoard_ playXPos:2 yPos:0 toState:TicTacToeStateX]).andReturn(YES);
+  OCMExpect([mockViewController_ updateDisplayFromBoard:mockBoard_]);
+  OCMExpect([mockBoard_ gameState]).andReturn(TicTacToeGameStateNotEnded);
+
+  [button2 sendActionsForControlEvents:UIControlEventTouchUpInside];
 }
 
 @end
