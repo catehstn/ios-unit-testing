@@ -28,8 +28,9 @@
   [super tearDown];
 }
 
-- (void)testCreateViewController {
-  EndGameViewController *viewController = [EndGamePresenter createViewController];
+- (void)testCreateViewControllerTie {
+  EndGameViewController *viewController =
+      [EndGamePresenter createViewControllerWithEndGameState:TicTacToeGameStateBoardFull];
   XCTAssertNotNil(viewController);
 
   EndGamePresenter *presenter = (EndGamePresenter *) [viewController presenter];

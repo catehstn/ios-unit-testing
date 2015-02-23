@@ -89,8 +89,8 @@ static const NSTimeInterval kComputerPlayDelay = 1;
 }
 
 - (void)gameOverWithState:(TicTacToeGameStateType)state {
-  // TODO(cate): Use state.
-  EndGameViewController *viewController = [EndGamePresenter createViewController];
+  EndGameViewController *viewController =
+      [EndGamePresenter createViewControllerWithEndGameState:state];
   [[self viewController] pushViewController:viewController animated:YES];
 }
 
