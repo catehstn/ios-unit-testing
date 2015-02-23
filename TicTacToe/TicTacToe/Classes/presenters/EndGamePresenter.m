@@ -1,11 +1,14 @@
 #import "EndGamePresenter.h"
 
+#import "EndGameView.h"
 #import "EndGameViewController.h"
 
 @interface EndGamePresenter () {
   TicTacToeGameStateType gameState_;
 }
 @property(nonatomic, readonly) EndGameViewController *endGameViewController;
+
+- (void)playAgainButtonPressed:(id)sender;
 @end
 
 @implementation EndGamePresenter
@@ -32,6 +35,8 @@ NSString *const kTie = @"Tie";
 }
 
 - (void)viewLoaded {
+  EndGameViewController *vc = [self endGameViewController];
+
   NSString *text;
   switch (gameState_) {
     case TicTacToeGameStateOWin:
@@ -45,7 +50,16 @@ NSString *const kTie = @"Tie";
     default:
       break;
   }
-  [[self endGameViewController] setGameOverStateText:text];
+  [vc setGameOverStateText:text];
+
+  [[[vc endGameView] playAgainButton] addTarget:self
+                                         action:@selector(playAgainButtonPressed:)
+                               forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void)playAgainButtonPressed:(id)sender {
+  // TODO(cate): Fill this in.
+  NSLog(@"play again button pressed");
 }
 
 @end
