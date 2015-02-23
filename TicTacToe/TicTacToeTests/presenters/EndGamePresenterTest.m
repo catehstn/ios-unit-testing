@@ -86,4 +86,24 @@
   [presenter_ viewLoaded];
 }
 
+- (void)testTapPlayAgainButton {
+  // Should launch a new navigation controller.
+  UIButton *playAgainButton = [UIButton new];
+  OCMStub([mockView_ playAgainButton]).andReturn(playAgainButton);
+
+  OCMExpect([mockViewController_ setGameOverStateText:[OCMArg any]]);
+  [presenter_ viewLoaded];
+
+  BOOL (^verifyNavController)(id) = ^BOOL(id obj) {
+      UINavigationController *navController = (UINavigationController *)obj;
+      UIViewController *rootViewController = [[navController viewControllers] firstObject];
+      XCTAssertTrue([rootViewController isKindOfClass:[HomeViewController class]]);
+  };
+  OCMExpect([mockViewController_  presentViewController:[OCMArg checkWithBlock:verifyNavController]
+                                               animated:YES
+                                             completion:nil]);
+
+  [playAgainButton sendActionsForControlEvents:UIControlEventTouchUpInside];
+}
+
 @end
