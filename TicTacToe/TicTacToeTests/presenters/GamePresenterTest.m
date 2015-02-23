@@ -173,11 +173,6 @@
 }
 
 - (void)testButtonPressedThenGameOver {
-  presenter_ = [[GamePresenter alloc] initWithBoard:mockBoard_
-                                     computerPlayer:mockComputerPlayer_
-                                           gameType:TicTacToeGameUserXO];
-  [presenter_ setViewController:mockViewController_];
-
   TicTacToeButton *button = [[TicTacToeButton alloc] initWithX:1 y:2];
 
   OCMExpect([mockView_ buttons]).andReturn(@[button]);
