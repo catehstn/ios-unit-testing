@@ -4,6 +4,6 @@
 
 @interface GameViewController : CHViewController
 
-@property(nonatomic, readonly) GameView* gameView;
+@property(nonatomic, readonly) GameView *gameView;
 
 @end

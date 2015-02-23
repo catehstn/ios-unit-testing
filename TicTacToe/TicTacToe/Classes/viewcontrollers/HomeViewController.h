@@ -4,6 +4,6 @@
 
 @interface HomeViewController : CHViewController
 
-@property(nonatomic, readonly) HomeView* homeView;
+@property(nonatomic, readonly) HomeView *homeView;
 
 @end
