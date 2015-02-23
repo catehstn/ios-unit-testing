@@ -5,8 +5,10 @@
 #import "EndGamePresenter.h"
 #import "EndGameView.h"
 #import "EndGameViewController.h"
+#import "HomeViewController.h"
 
 @interface EndGamePresenterTest : XCTestCase {
+  id mockView_;
   id mockViewController_;
   id presenter_;
 }
@@ -19,11 +21,15 @@
   [super setUp];
 
   mockViewController_ = OCMStrictClassMock([EndGameViewController class]);
-  presenter_ = [EndGamePresenter new];
+  mockView_ = OCMStrictClassMock([EndGameView class]);
+  OCMStub([mockViewController_ endGameView]).andReturn(mockView_);
+
+  presenter_ = [[EndGamePresenter alloc] initWithEndGameState:TicTacToeGameStateBoardFull];
   [presenter_ setViewController:mockViewController_];
 }
 
 - (void)tearDown {
+  OCMVerifyAll(mockView_);
   OCMVerifyAll(mockViewController_);
 
   [super tearDown];
@@ -66,6 +72,18 @@
   [presenter viewLoaded];
 
   XCTAssertEqualObjects([[[viewController endGameView] gameStateLabel] text], kXWin);
+}
+
+- (void)testViewLoaded {
+  id mockButton = OCMStrictClassMock([UIButton class]);
+  OCMStub([mockView_ playAgainButton]).andReturn(mockButton);
+
+  OCMExpect([mockViewController_ setGameOverStateText:[OCMArg any]]);
+  OCMExpect([mockButton addTarget:presenter_
+                           action:[OCMArg anySelector]
+                 forControlEvents:UIControlEventTouchUpInside]);
+
+  [presenter_ viewLoaded];
 }
 
 @end
