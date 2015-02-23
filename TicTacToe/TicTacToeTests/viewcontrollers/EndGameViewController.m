@@ -3,6 +3,7 @@
 #import <XCTest/XCTest.h>
 
 #import "EndGamePresenter.h"
+#import "EndGameView.h"
 #import "EndGameViewController.h"
 
 @interface EndGameViewControllerTest : XCTestCase {
@@ -27,10 +28,14 @@
   [super tearDown];
 }
 
-- (void)testViewLoaded {
-  [viewController_ loadView];
+- (void)testSetGameStateText {
+  OCMExpect([mockPresenter_ leftNavigationButtons]).andReturn([NSArray array]);
+  OCMExpect([mockPresenter_ rightNavigationButtons]).andReturn([NSArray array]);
+  OCMExpect([mockPresenter_ viewLoaded]);
 
-  // TODO(cate): Fill this in.
+  NSString *gameState = @"anything goes";
+  [viewController_ setGameOverStateText:gameState];
+  XCTAssertEqualObjects([[[viewController_ endGameView] gameStateLabel] text], gameState);
 }
 
 @end
