@@ -36,6 +36,7 @@
 		4CCCD92C1A9795F000AB451F /* HomeViewControllerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCCD92B1A9795F000AB451F /* HomeViewControllerTest.m */; };
 		4CCCD92E1A97A76F00AB451F /* GameViewControllerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCCD92D1A97A76F00AB451F /* GameViewControllerTest.m */; };
 		4CCCD9301A97A8B900AB451F /* EndGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCCD92F1A97A8B900AB451F /* EndGameViewController.m */; };
+		4CCCD9331A9B10AE00AB451F /* EndGameView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCCD9321A9B10AE00AB451F /* EndGameView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +105,8 @@
 		4CCCD92B1A9795F000AB451F /* HomeViewControllerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeViewControllerTest.m; path = viewcontrollers/HomeViewControllerTest.m; sourceTree = "<group>"; };
 		4CCCD92D1A97A76F00AB451F /* GameViewControllerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameViewControllerTest.m; path = viewcontrollers/GameViewControllerTest.m; sourceTree = "<group>"; };
 		4CCCD92F1A97A8B900AB451F /* EndGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EndGameViewController.m; path = viewcontrollers/EndGameViewController.m; sourceTree = "<group>"; };
+		4CCCD9311A9B10AE00AB451F /* EndGameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EndGameView.h; path = views/EndGameView.h; sourceTree = "<group>"; };
+		4CCCD9321A9B10AE00AB451F /* EndGameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EndGameView.m; path = views/EndGameView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -265,6 +268,8 @@
 				4CCCD8FC1A94D56F00AB451F /* GameView.m */,
 				4CCCD9041A94DD5C00AB451F /* TicTacToeButton.h */,
 				4CCCD9051A94DD5C00AB451F /* TicTacToeButton.m */,
+				4CCCD9311A9B10AE00AB451F /* EndGameView.h */,
+				4CCCD9321A9B10AE00AB451F /* EndGameView.m */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -433,6 +438,7 @@
 				4CCCD9001A94D90C00AB451F /* GamePresenter.m in Sources */,
 				4CCCD8D71A8CEE1200AB451F /* CHPresenter.m in Sources */,
 				4CCCD8D81A8CEE1200AB451F /* CHViewController.m in Sources */,
+				4CCCD9331A9B10AE00AB451F /* EndGameView.m in Sources */,
 				4CCCD90C1A962CDB00AB451F /* EndGameViewController.m in Sources */,
 				4CCCD9031A94D92F00AB451F /* GameViewController.m in Sources */,
 				4CCCD8B01A8CEC7A00AB451F /* AppDelegate.m in Sources */,

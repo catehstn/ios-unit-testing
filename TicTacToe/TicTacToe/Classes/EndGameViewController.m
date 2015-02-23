@@ -1,5 +1,7 @@
 #import "EndGameViewController.h"
 
+#import "EndGameView.h"
+
 @interface EndGameViewController ()
 
 @end
@@ -7,9 +9,7 @@
 @implementation EndGameViewController
 
 - (void)loadView {
-  UIView *view = [UIView new];
-  [view setBackgroundColor:[UIColor magentaColor]];
-  [self setView:view];
+  [self setView:[EndGameView new]];
 }
 
 @end
