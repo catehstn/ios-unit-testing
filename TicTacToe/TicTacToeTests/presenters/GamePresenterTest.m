@@ -159,6 +159,17 @@
   OCMVerifyAll(mockButton3);
 }
 
+- (void)testButtonPressedComputerPlaying {
+  TicTacToeButton *button = [[TicTacToeButton alloc] initWithX:1 y:2];
+
+  OCMExpect([mockView_ buttons]).andReturn(@[button]);
+
+  [presenter_ viewLoaded];
+
+  [presenter_ setComputerInPlay:YES];
+  [button sendActionsForControlEvents:UIControlEventTouchUpInside];
+}
+
 - (void)testButtonPressedSquareSetAlready {
   TicTacToeButton *button = [[TicTacToeButton alloc] initWithX:1 y:2];
 

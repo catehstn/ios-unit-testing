@@ -23,4 +23,7 @@ typedef NS_ENUM(NSInteger, TicTacToeGameType) {
      computerPlayer:(ComputerPlayer *)computerPlayer
            gameType:(TicTacToeGameType)gameType;
 
+// Visible for testing.
+@property(nonatomic, assign) BOOL computerInPlay;
+
 @end

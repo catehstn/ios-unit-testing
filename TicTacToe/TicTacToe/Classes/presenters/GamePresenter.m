@@ -28,6 +28,7 @@
 
 @implementation GamePresenter
 
+@synthesize computerInPlay = computerInPlay_;
 @synthesize gameType = gameType_;
 
 static const NSTimeInterval kComputerPlayDelay = 1;
