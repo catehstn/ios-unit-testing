@@ -11,7 +11,8 @@
 @implementation EndGamePresenter
 
 + (EndGameViewController *)createViewControllerWithEndGameState:(TicTacToeGameStateType)gameState {
-  return [[EndGameViewController alloc] initWithPresenter:[EndGamePresenter new]];
+  return [[EndGameViewController alloc] initWithPresenter:
+      [[EndGamePresenter alloc] initWithEndGameState:gameState]];
 }
 
 - (id)initWithEndGameState:(TicTacToeGameStateType)gameState {
