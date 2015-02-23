@@ -172,6 +172,26 @@
   [button sendActionsForControlEvents:UIControlEventTouchUpInside];
 }
 
+- (void)testButtonPressedThenGameOver {
+  presenter_ = [[GamePresenter alloc] initWithBoard:mockBoard_
+                                     computerPlayer:mockComputerPlayer_
+                                           gameType:TicTacToeGameUserXO];
+  [presenter_ setViewController:mockViewController_];
+
+  TicTacToeButton *button = [[TicTacToeButton alloc] initWithX:1 y:2];
+
+  OCMExpect([mockView_ buttons]).andReturn(@[button]);
+
+  [presenter_ viewLoaded];
+
+  OCMExpect([mockBoard_ playXPos:1 yPos:2 toState:TicTacToeStateO]).andReturn(YES);
+  OCMExpect([mockViewController_ updateDisplayFromBoard:mockBoard_]);
+  OCMExpect([mockBoard_ gameState]).andReturn(TicTacToeGameStateBoardFull);
+  OCMExpect([mockViewController_ pushViewController:[OCMArg any] animated:YES]);
+
+  [button sendActionsForControlEvents:UIControlEventTouchUpInside];
+}
+
 - (void)testButtonPressedUserThenUser {
   presenter_ = [[GamePresenter alloc] initWithBoard:mockBoard_
                                      computerPlayer:mockComputerPlayer_
