@@ -12,4 +12,8 @@
   [self setView:[EndGameView new]];
 }
 
+- (EndGameView *)endGameView {
+  return (EndGameView *)[self view];
+}
+
 @end
