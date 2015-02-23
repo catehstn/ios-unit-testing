@@ -23,9 +23,7 @@
 - (void)handlePossibleGameEnd;
 - (void)maybePlayComputerTurn;
 - (void)playComputerTurn;
-- (void)updateBoard;
 - (void)updateTurn;
-- (NSString *)valueForState:(TicTacToeStateType)state;
 @end
 
 @implementation GamePresenter
@@ -96,7 +94,7 @@ static const NSTimeInterval kComputerPlayDelay = 1;
 - (void)handleEndOfTurn {
   // Change turn.
   [self updateTurn];
-  [self updateBoard];
+  [[self gameViewController] updateDisplayFromBoard:board_];
   [self handlePossibleGameEnd];
 }
 
@@ -124,28 +122,8 @@ static const NSTimeInterval kComputerPlayDelay = 1;
   computerInPlay_ = NO;
 }
 
-- (void)updateBoard {
-  for (int x = 0; x < 3; x++) {
-    for (int y = 0; y < 3; y++) {
-      NSString *value = [self valueForState:[board_ stateForXPos:x yPos:y]];
-      [[[self gameViewController] gameView] updateValue:value atX:x y:y];
-    }
-  }
-}
-
 - (void)updateTurn {
   turn_ = (turn_ == TicTacToeStateO) ? TicTacToeStateX : TicTacToeStateO;
-}
-
-- (NSString *)valueForState:(TicTacToeStateType)state {
-  switch (state) {
-    case TicTacToeStateO:
-      return @"O";
-    case TicTacToeStateX:
-      return @"X";
-    default:
-      return @"";
-  }
 }
 
 @end
