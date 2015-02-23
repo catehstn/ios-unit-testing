@@ -16,7 +16,7 @@
   GamePresenter *presenter_;
 }
 // Sets expectations that the view will return these buttons, and a target will be added to each.
-- (void)setUpExpectationsForButtons:(NSArray *)buttons
+- (void)setUpExpectationsForButtons:(NSArray *)buttons;
 @end
 
 @implementation GamePresenterTest
@@ -120,6 +120,38 @@
   [self setUpExpectationsForButtons:buttons];
 
   [presenter_ viewLoaded];
+
+  OCMVerifyAll(mockButton1);
+  OCMVerifyAll(mockButton2);
+  OCMVerifyAll(mockButton3);
+}
+
+- (void)testViewLoadedComputerGoesFirst {
+  XCTestExpectation *expectation =
+      [self expectationWithDescription:@"testViewLoadedComputerGoesFirst"];
+
+  presenter_ = [[GamePresenter alloc] initWithBoard:mockBoard_
+                                     computerPlayer:mockComputerPlayer_
+                                           gameType:TicTacToeGameUserX];
+  [presenter_ setViewController:mockViewController_];
+
+  id mockButton1 = OCMStrictClassMock([UIButton class]);
+  id mockButton2 = OCMStrictClassMock([UIButton class]);
+  id mockButton3 = OCMStrictClassMock([UIButton class]);
+  NSArray *buttons = @[mockButton1, mockButton2, mockButton3];
+  [self setUpExpectationsForButtons:buttons];
+
+  // Computer should play.
+  OCMExpect([mockBoard_ gameState]).andReturn(TicTacToeGameStateNotEnded);
+  OCMExpect([mockComputerPlayer_ makeNextMove]);
+  OCMExpect([mockViewController_ updateDisplayFromBoard:mockBoard_])
+      .andDo(^(NSInvocation *invocation){
+          [expectation fulfill];
+      });
+
+  [presenter_ viewLoaded];
+
+  [self waitForExpectationsWithTimeout:2 handler:nil];
 
   OCMVerifyAll(mockButton1);
   OCMVerifyAll(mockButton2);
