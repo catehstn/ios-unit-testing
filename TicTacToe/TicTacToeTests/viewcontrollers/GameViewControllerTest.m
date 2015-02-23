@@ -78,4 +78,31 @@
   XCTAssertEqualObjects([[gameView buttonAtX:2 y:2] titleForState:UIControlStateNormal], kO);
 }
 
+- (void)testUpdateBoardNotSymmetrical {
+  TicTacToeBoard *board = [[TicTacToeBoard alloc] init];
+  [board playXPos:0 yPos:0 toState:TicTacToeStateO];
+  [board playXPos:1 yPos:0 toState:TicTacToeStateO];
+  [board playXPos:2 yPos:0 toState:TicTacToeStateO];
+  [board playXPos:0 yPos:1 toState:TicTacToeStateX];
+  [board playXPos:1 yPos:1 toState:TicTacToeStateO];
+  [board playXPos:2 yPos:1 toState:TicTacToeStateO];
+  [board playXPos:0 yPos:2 toState:TicTacToeStateX];
+  [board playXPos:1 yPos:2 toState:TicTacToeStateX];
+  [board playXPos:2 yPos:2 toState:TicTacToeStateX];
+
+  [viewController_ loadView];
+  [viewController_ updateDisplayFromBoard:board];
+  GameView *gameView = [viewController_ gameView];
+
+  XCTAssertEqualObjects([[gameView buttonAtX:0 y:0] titleForState:UIControlStateNormal], kO);
+  XCTAssertEqualObjects([[gameView buttonAtX:1 y:0] titleForState:UIControlStateNormal], kO);
+  XCTAssertEqualObjects([[gameView buttonAtX:2 y:0] titleForState:UIControlStateNormal], kO);
+  XCTAssertEqualObjects([[gameView buttonAtX:0 y:1] titleForState:UIControlStateNormal], kX);
+  XCTAssertEqualObjects([[gameView buttonAtX:1 y:1] titleForState:UIControlStateNormal], kO);
+  XCTAssertEqualObjects([[gameView buttonAtX:2 y:1] titleForState:UIControlStateNormal], kO);
+  XCTAssertEqualObjects([[gameView buttonAtX:0 y:2] titleForState:UIControlStateNormal], kX);
+  XCTAssertEqualObjects([[gameView buttonAtX:1 y:2] titleForState:UIControlStateNormal], kX);
+  XCTAssertEqualObjects([[gameView buttonAtX:2 y:2] titleForState:UIControlStateNormal], kX);
+}
+
 @end
