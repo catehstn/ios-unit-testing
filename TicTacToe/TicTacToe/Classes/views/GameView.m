@@ -6,7 +6,6 @@
   NSArray *buttons_;
 }
 
-- (TicTacToeButton *)buttonAtX:(int)x y:(int)y;
 - (TicTacToeButton *)createAndAddButtonAtX:(NSInteger)x y:(NSInteger)y;
 - (void)createView;
 - (void)setUpConstraints;
