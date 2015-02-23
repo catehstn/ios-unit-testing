@@ -16,4 +16,8 @@
   return (EndGameView *)[self view];
 }
 
+- (void)setGameOverStateText:(NSString *)text {
+  [[[self endGameView] gameStateLabel] setText:text];
+}
+
 @end

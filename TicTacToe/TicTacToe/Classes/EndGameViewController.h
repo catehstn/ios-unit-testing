@@ -6,4 +6,6 @@
 
 @property(nonatomic, readonly) EndGameView *endGameView;
 
+- (void)setGameOverStateText:(NSString *)text;
+
 @end
