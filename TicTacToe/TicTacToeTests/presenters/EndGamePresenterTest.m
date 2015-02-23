@@ -3,6 +3,7 @@
 #import <XCTest/XCTest.h>
 
 #import "EndGamePresenter.h"
+#import "EndGameView.h"
 #import "EndGameViewController.h"
 
 @interface EndGamePresenterTest : XCTestCase {
@@ -28,13 +29,43 @@
   [super tearDown];
 }
 
-- (void)testCreateViewController {
+- (void)testCreateViewControllerTie {
   EndGameViewController *viewController =
       [EndGamePresenter createViewControllerWithEndGameState:TicTacToeGameStateBoardFull];
   XCTAssertNotNil(viewController);
 
   EndGamePresenter *presenter = (EndGamePresenter *) [viewController presenter];
   XCTAssertNotNil(presenter);
+
+  [presenter viewLoaded];
+
+  XCTAssertEqualObjects([[[viewController endGameView] gameStateLabel] text], kTie);
+}
+
+- (void)testCreateViewControllerOWins {
+  EndGameViewController *viewController =
+  [EndGamePresenter createViewControllerWithEndGameState:TicTacToeGameStateOWin];
+  XCTAssertNotNil(viewController);
+
+  EndGamePresenter *presenter = (EndGamePresenter *) [viewController presenter];
+  XCTAssertNotNil(presenter);
+
+  [presenter viewLoaded];
+
+  XCTAssertEqualObjects([[[viewController endGameView] gameStateLabel] text], kOWin);
+}
+
+- (void)testCreateViewControllerXWins {
+  EndGameViewController *viewController =
+  [EndGamePresenter createViewControllerWithEndGameState:TicTacToeGameStateXWin];
+  XCTAssertNotNil(viewController);
+
+  EndGamePresenter *presenter = (EndGamePresenter *) [viewController presenter];
+  XCTAssertNotNil(presenter);
+
+  [presenter viewLoaded];
+
+  XCTAssertEqualObjects([[[viewController endGameView] gameStateLabel] text], kXWin);
 }
 
 @end
