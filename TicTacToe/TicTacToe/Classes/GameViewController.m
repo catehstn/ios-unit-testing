@@ -1,13 +1,15 @@
 #import "GameViewController.h"
 
 #import "GameView.h"
-#import "TicTacToeBoard.h"
 
 @interface GameViewController ()
-- (NSString *)valueForState:(TicTacToeStateType)state;
 @end
 
 @implementation GameViewController
+
+NSString *const kO = @"O";
+NSString *const kX = @"X";
+NSString *const kEmpty = @"";
 
 - (void)loadView {
   [self setView:[GameView new]];
@@ -29,11 +31,11 @@
 - (NSString *)valueForState:(TicTacToeStateType)state {
   switch (state) {
     case TicTacToeStateO:
-      return @"O";
+      return kO;
     case TicTacToeStateX:
-      return @"X";
+      return kX;
     default:
-      return @"";
+      return kEmpty;
   }
 }
 

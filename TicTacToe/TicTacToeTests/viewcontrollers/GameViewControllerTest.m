@@ -32,4 +32,20 @@
   XCTAssertNotNil([viewController_ gameView]);
 }
 
+- (void)testValueForStateO {
+  XCTAssertEqualObjects([viewController_ valueForState:TicTacToeStateO], kO);
+}
+
+- (void)testValueForStateX {
+  XCTAssertEqualObjects([viewController_ valueForState:TicTacToeStateX], kX);
+}
+
+- (void)testValueForStateEmpty {
+  XCTAssertEqualObjects([viewController_ valueForState:TicTacToeStateEmpty], kEmpty);
+}
+
+- (void)testValueForStateInvalid {
+  XCTAssertEqualObjects([viewController_ valueForState:TicTacToeStateInvalid], kEmpty);
+}
+
 @end
