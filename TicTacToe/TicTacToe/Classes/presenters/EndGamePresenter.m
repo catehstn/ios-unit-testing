@@ -59,7 +59,10 @@ NSString *const kTie = @"Tie";
 }
 
 - (void)playAgainButtonPressed:(id)sender {
-  NSLog(@"play again button pressed");
+  UIViewController *homeViewController = [HomePresenter createViewController];
+  UINavigationController *navController =
+      [[UINavigationController alloc] initWithRootViewController:homeViewController];
+  [[self viewController] presentViewController:navController animated:YES completion:nil];
 }
 
 @end
