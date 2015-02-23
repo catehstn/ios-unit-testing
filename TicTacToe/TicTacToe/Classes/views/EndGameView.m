@@ -16,6 +16,9 @@ static const CGFloat kLabelPadding = 25.0;
 static const CGFloat kPadding = 5.0;
 static const CGFloat kMaxButtonHeight = 40;
 
+@synthesize gameStateLabel = gameStateLabel_;
+@synthesize playAgainButton = playAgainButton_;
+
 - (id)initWithFrame:(CGRect)frame {
   self = [super initWithFrame:frame];
   if (self) {
@@ -29,38 +32,38 @@ static const CGFloat kMaxButtonHeight = 40;
   [self setBackgroundColor:[UIColor grayColor]];
 
   gameStateLabel_ = [UILabel new];
-  [gameStateLabel_ setTranslatesAutoresizingMaskIntoConstraints:NO];
-  [self addSubview:gameStateLabel_];
+  [[self gameStateLabel] setTranslatesAutoresizingMaskIntoConstraints:NO];
+  [self addSubview:[self gameStateLabel]];
 
   playAgainButton_ = [UIButton new];
-  [playAgainButton_ setTitle:@"play again" forState:UIControlStateNormal];
-  [playAgainButton_ setTranslatesAutoresizingMaskIntoConstraints:NO];
-  [self addSubview:playAgainButton_];
+  [[self playAgainButton] setTitle:@"play again" forState:UIControlStateNormal];
+  [[self playAgainButton] setTranslatesAutoresizingMaskIntoConstraints:NO];
+  [self addSubview:[self playAgainButton]];
 }
 
 - (void)setUpConstraints {
-  [[NSLayoutConstraint constraintWithItem:gameStateLabel_
+  [[NSLayoutConstraint constraintWithItem:[self gameStateLabel]
                                 attribute:NSLayoutAttributeCenterX
                                 relatedBy:NSLayoutRelationEqual
                                    toItem:self
                                 attribute:NSLayoutAttributeCenterX
                                multiplier:1
                                  constant:0] setActive:YES];
-  [[NSLayoutConstraint constraintWithItem:gameStateLabel_
+  [[NSLayoutConstraint constraintWithItem:[self gameStateLabel]
                                 attribute:NSLayoutAttributeWidth
                                 relatedBy:NSLayoutRelationLessThanOrEqual
                                    toItem:self
                                 attribute:NSLayoutAttributeWidth
                                multiplier:1
                                  constant:-(2 * kLabelPadding)] setActive:YES];
-  [[NSLayoutConstraint constraintWithItem:gameStateLabel_
+  [[NSLayoutConstraint constraintWithItem:[self gameStateLabel]
                                 attribute:NSLayoutAttributeCenterY
                                 relatedBy:NSLayoutRelationEqual
                                    toItem:self
                                 attribute:NSLayoutAttributeCenterY
                                multiplier:0.5
                                  constant:0] setActive:YES];
-  [[NSLayoutConstraint constraintWithItem:gameStateLabel_
+  [[NSLayoutConstraint constraintWithItem:[self gameStateLabel]
                                 attribute:NSLayoutAttributeHeight
                                 relatedBy:NSLayoutRelationLessThanOrEqual
                                    toItem:self
@@ -68,28 +71,28 @@ static const CGFloat kMaxButtonHeight = 40;
                                multiplier:0.3
                                  constant:0] setActive:YES];
 
-  [[NSLayoutConstraint constraintWithItem:playAgainButton_
+  [[NSLayoutConstraint constraintWithItem:[self playAgainButton]
                                attribute:NSLayoutAttributeBottom
                                relatedBy:NSLayoutRelationEqual
                                   toItem:self
                                attribute:NSLayoutAttributeBottom
                               multiplier:1
                                  constant:-kPadding] setActive:YES];
-  [[NSLayoutConstraint constraintWithItem:playAgainButton_
+  [[NSLayoutConstraint constraintWithItem:[self playAgainButton]
                                 attribute:NSLayoutAttributeWidth
                                 relatedBy:NSLayoutRelationEqual
                                    toItem:self
                                 attribute:NSLayoutAttributeWidth
                                multiplier:1
                                  constant:(2 * -kPadding)] setActive:YES];
-  [[NSLayoutConstraint constraintWithItem:playAgainButton_
+  [[NSLayoutConstraint constraintWithItem:[self playAgainButton]
                                 attribute:NSLayoutAttributeCenterX
                                 relatedBy:NSLayoutRelationEqual
                                    toItem:self
                                 attribute:NSLayoutAttributeCenterX
                                multiplier:1
                                  constant:0] setActive:YES];
-  [[NSLayoutConstraint constraintWithItem:playAgainButton_
+  [[NSLayoutConstraint constraintWithItem:[self playAgainButton]
                                 attribute:NSLayoutAttributeHeight
                                 relatedBy:NSLayoutRelationLessThanOrEqual
                                    toItem:nil
