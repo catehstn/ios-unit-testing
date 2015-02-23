@@ -2,6 +2,7 @@
 
 #import "EndGameView.h"
 #import "EndGameViewController.h"
+#import "HomePresenter.h"
 
 @interface EndGamePresenter () {
   TicTacToeGameStateType gameState_;
@@ -17,7 +18,7 @@ NSString *const kOWin = @"O wins";
 NSString *const kXWin = @"X wins";
 NSString *const kTie = @"Tie";
 
-+ (EndGameViewController *)createViewControllerWithEndGameState:(TicTacToeGameStateType)gameState {
++ (UIViewController *)createViewControllerWithEndGameState:(TicTacToeGameStateType)gameState {
   return [[EndGameViewController alloc] initWithPresenter:
       [[EndGamePresenter alloc] initWithEndGameState:gameState]];
 }
@@ -58,7 +59,6 @@ NSString *const kTie = @"Tie";
 }
 
 - (void)playAgainButtonPressed:(id)sender {
-  // TODO(cate): Fill this in.
   NSLog(@"play again button pressed");
 }
 

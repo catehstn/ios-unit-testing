@@ -37,7 +37,7 @@
 }
 
 - (void)testCreateViewController {
-  HomeViewController *viewController = [HomePresenter createViewController];
+  HomeViewController *viewController = (HomeViewController *) [HomePresenter createViewController];
   XCTAssertNotNil(viewController);
 
   HomePresenter *presenter = (HomePresenter *) [viewController presenter];

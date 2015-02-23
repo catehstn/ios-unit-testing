@@ -1,7 +1,6 @@
 #import "HomePresenter.h"
 
 #import "GamePresenter.h"
-#import "GameViewController.h"
 #import "HomeView.h"
 #import "HomeViewController.h"
 
@@ -16,7 +15,7 @@
 
 @implementation HomePresenter
 
-+ (HomeViewController *)createViewController {
++ (UIViewController *)createViewController {
   return [[HomeViewController alloc] initWithPresenter:[HomePresenter new]];
 }
 
@@ -52,7 +51,7 @@
 }
 
 - (void)pushGameViewControllerWithGameType:(TicTacToeGameType)gameType {
-  GameViewController *viewController = [GamePresenter createViewControllerWithGameType:gameType];
+  UIViewController *viewController = [GamePresenter createViewControllerWithGameType:gameType];
   [[self viewController] pushViewController:viewController animated:YES];
 }
 

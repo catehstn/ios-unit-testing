@@ -2,7 +2,6 @@
 
 #import "ComputerPlayer.h"
 #import "EndGamePresenter.h"
-#import "EndGameViewController.h"
 #import "GameView.h"
 #import "GameViewController.h"
 #import "TicTacToeBoard.h"
@@ -35,7 +34,7 @@
 
 static const NSTimeInterval kComputerPlayDelay = 1;
 
-+ (GameViewController *)createViewControllerWithGameType:(TicTacToeGameType)gameType {
++ (UIViewController *)createViewControllerWithGameType:(TicTacToeGameType)gameType {
   TicTacToeBoard *board = [TicTacToeBoard new];
   TicTacToeStateType type = (gameType == TicTacToeGameUserO) ? TicTacToeStateX : TicTacToeStateO;
   ComputerPlayer *computerPlayer = [[ComputerPlayer alloc] initWithBoard:board type:type];
@@ -89,7 +88,7 @@ static const NSTimeInterval kComputerPlayDelay = 1;
 }
 
 - (void)gameOverWithState:(TicTacToeGameStateType)state {
-  EndGameViewController *viewController =
+  UIViewController *viewController =
       [EndGamePresenter createViewControllerWithEndGameState:state];
   [[self viewController] pushViewController:viewController animated:YES];
 }

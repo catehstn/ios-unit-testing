@@ -30,7 +30,7 @@
 }
 
 - (void)testCreateViewControllerTie {
-  EndGameViewController *viewController =
+  EndGameViewController *viewController = (EndGameViewController *)
       [EndGamePresenter createViewControllerWithEndGameState:TicTacToeGameStateBoardFull];
   XCTAssertNotNil(viewController);
 
@@ -43,8 +43,8 @@
 }
 
 - (void)testCreateViewControllerOWins {
-  EndGameViewController *viewController =
-  [EndGamePresenter createViewControllerWithEndGameState:TicTacToeGameStateOWin];
+  EndGameViewController *viewController = (EndGameViewController *)
+      [EndGamePresenter createViewControllerWithEndGameState:TicTacToeGameStateOWin];
   XCTAssertNotNil(viewController);
 
   EndGamePresenter *presenter = (EndGamePresenter *) [viewController presenter];
@@ -56,8 +56,8 @@
 }
 
 - (void)testCreateViewControllerXWins {
-  EndGameViewController *viewController =
-  [EndGamePresenter createViewControllerWithEndGameState:TicTacToeGameStateXWin];
+  EndGameViewController *viewController = (EndGameViewController *)
+      [EndGamePresenter createViewControllerWithEndGameState:TicTacToeGameStateXWin];
   XCTAssertNotNil(viewController);
 
   EndGamePresenter *presenter = (EndGamePresenter *) [viewController presenter];

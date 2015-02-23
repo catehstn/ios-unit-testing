@@ -1,3 +1,5 @@
+#import <UIKit/UIKit.h>
+
 #import "CHPresenter.h"
 
 @class ComputerPlayer;
@@ -14,7 +16,7 @@ typedef NS_ENUM(NSInteger, TicTacToeGameType) {
 
 @property(nonatomic, readonly) TicTacToeGameType gameType;
 
-+ (GameViewController *)createViewControllerWithGameType:(TicTacToeGameType)gameType;
++ (UIViewController *)createViewControllerWithGameType:(TicTacToeGameType)gameType;
 
 // Designated initializer. Exposed for testing.
 - (id)initWithBoard:(TicTacToeBoard *)board

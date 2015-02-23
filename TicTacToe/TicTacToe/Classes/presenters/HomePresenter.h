@@ -1,9 +1,11 @@
+#import <UIKit/UIKit.h>
+
 #import "CHPresenter.h"
 
 @class HomeViewController;
 
 @interface HomePresenter : CHPresenter
 
-+ (HomeViewController *)createViewController;
++ (UIViewController *)createViewController;
 
 @end
