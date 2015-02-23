@@ -7,6 +7,7 @@
 #import "GameView.h"
 #import "GameViewController.h"
 #import "TicTacToeBoard.h"
+#import "TicTacToeButton.h"
 
 @interface GamePresenterTest : XCTestCase {
   id mockBoard_;
@@ -156,6 +157,19 @@
   OCMVerifyAll(mockButton1);
   OCMVerifyAll(mockButton2);
   OCMVerifyAll(mockButton3);
+}
+
+- (void)testButtonPressedSquareSetAlready {
+  TicTacToeButton *button = [[TicTacToeButton alloc] initWithX:1 y:2];
+
+  OCMExpect([mockView_ buttons]).andReturn(@[button]);
+
+  [presenter_ viewLoaded];
+
+  // Return NO to indicate square filled, nothing else happens.
+  OCMExpect([mockBoard_ playXPos:1 yPos:2 toState:TicTacToeStateO]).andReturn(NO);
+
+  [button sendActionsForControlEvents:UIControlEventTouchUpInside];
 }
 
 @end
