@@ -10,6 +10,10 @@
 
 @implementation EndGamePresenter
 
+NSString *const kOWin = @"O wins";
+NSString *const kXWin = @"X wins";
+NSString *const kTie = @"Tie";
+
 + (EndGameViewController *)createViewControllerWithEndGameState:(TicTacToeGameStateType)gameState {
   return [[EndGameViewController alloc] initWithPresenter:
       [[EndGamePresenter alloc] initWithEndGameState:gameState]];
@@ -31,13 +35,13 @@
   NSString *text;
   switch (gameState_) {
     case TicTacToeGameStateOWin:
-      text = @"O wins";
+      text = kOWin;
       break;
     case TicTacToeGameStateXWin:
-      text = @"X wins";
+      text = kXWin;
       break;
     case TicTacToeGameStateBoardFull:
-      text = @"Tie";
+      text = kTie;
     default:
       break;
   }

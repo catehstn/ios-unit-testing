@@ -5,6 +5,10 @@
 
 @class EndGameViewController;
 
+FOUNDATION_EXPORT NSString *const kOWin;
+FOUNDATION_EXPORT NSString *const kXWin;
+FOUNDATION_EXPORT NSString *const kTie;
+
 @interface EndGamePresenter : CHPresenter
 
 + (EndGameViewController *)createViewControllerWithEndGameState:(TicTacToeGameStateType)gameState;
