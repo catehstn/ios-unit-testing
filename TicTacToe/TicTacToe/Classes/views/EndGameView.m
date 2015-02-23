@@ -33,6 +33,9 @@ static const CGFloat kMaxButtonHeight = 40;
 
   gameStateLabel_ = [UILabel new];
   [[self gameStateLabel] setTranslatesAutoresizingMaskIntoConstraints:NO];
+  [[self gameStateLabel] setTextAlignment:NSTextAlignmentCenter];
+  [[self gameStateLabel] setFont:[UIFont systemFontOfSize:18]];
+  [[self gameStateLabel] setTextColor:[UIColor whiteColor]];
   [self addSubview:[self gameStateLabel]];
 
   playAgainButton_ = [UIButton new];
@@ -51,7 +54,7 @@ static const CGFloat kMaxButtonHeight = 40;
                                  constant:0] setActive:YES];
   [[NSLayoutConstraint constraintWithItem:[self gameStateLabel]
                                 attribute:NSLayoutAttributeWidth
-                                relatedBy:NSLayoutRelationLessThanOrEqual
+                                relatedBy:NSLayoutRelationEqual
                                    toItem:self
                                 attribute:NSLayoutAttributeWidth
                                multiplier:1
@@ -65,7 +68,7 @@ static const CGFloat kMaxButtonHeight = 40;
                                  constant:0] setActive:YES];
   [[NSLayoutConstraint constraintWithItem:[self gameStateLabel]
                                 attribute:NSLayoutAttributeHeight
-                                relatedBy:NSLayoutRelationLessThanOrEqual
+                                relatedBy:NSLayoutRelationEqual
                                    toItem:self
                                 attribute:NSLayoutAttributeHeight
                                multiplier:0.3
