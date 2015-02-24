@@ -55,10 +55,10 @@
 
 - (BOOL)complete3IfPossibleForType:(TicTacToeStateType)type {
   for (int i = 0; i < 3; i++) {
-    if ([self completeRowIfPossible:i type:type_]) {
+    if ([self completeRowIfPossible:i type:type]) {
       return YES;
     }
-    if ([self completeColumnIfPossible:i type:type_]) {
+    if ([self completeColumnIfPossible:i type:type]) {
       return YES;
     }
   }
@@ -66,22 +66,22 @@
   return NO;
 }
 
-- (BOOL)completeColumnIfPossible:(int)row type:(TicTacToeStateType)type {
-  TicTacToeStateType sqA = [board_ stateForXPos:0 yPos:row];
-  TicTacToeStateType sqB = [board_ stateForXPos:1 yPos:row];
-  TicTacToeStateType sqC = [board_ stateForXPos:2 yPos:row];
+- (BOOL)completeColumnIfPossible:(int)column type:(TicTacToeStateType)type {
+  TicTacToeStateType sqA = [board_ stateForXPos:0 yPos:column];
+  TicTacToeStateType sqB = [board_ stateForXPos:1 yPos:column];
+  TicTacToeStateType sqC = [board_ stateForXPos:2 yPos:column];
 
   if ([self checkState:type forSquareA:sqA squareB:sqB squareC:sqC]) {
     if (sqA == TicTacToeStateEmpty) {
-      [self playXPos:0 yPos:row];
+      [self playXPos:0 yPos:column];
       return YES;
     }
     if (sqB == TicTacToeStateEmpty) {
-      [self playXPos:1 yPos:row];
+      [self playXPos:1 yPos:column];
       return YES;
     }
     if (sqC == TicTacToeStateEmpty) {
-      [self playXPos:2 yPos:row];
+      [self playXPos:2 yPos:column];
       return YES;
     }
   }
