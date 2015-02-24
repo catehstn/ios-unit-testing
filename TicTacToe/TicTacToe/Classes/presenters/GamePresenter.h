@@ -1,16 +1,11 @@
 #import <UIKit/UIKit.h>
 
+#import "GameStates.h"
 #import "CHPresenter.h"
 
 @class ComputerPlayer;
 @class GameViewController;
 @class TicTacToeBoard;
-
-typedef NS_ENUM(NSInteger, TicTacToeGameType) {
-  TicTacToeGameUserX,
-  TicTacToeGameUserO,
-  TicTacToeGameUserXO
-};
 
 @interface GamePresenter : CHPresenter
 

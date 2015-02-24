@@ -1,9 +1,9 @@
 #import "CHViewController.h"
 
-// TODO(cate): Move enums out and delete this import.
-#import "TicTacToeBoard.h"
+#import "GameStates.h"
 
 @class GameView;
+@class TicTacToeBoard;
 
 FOUNDATION_EXPORT NSString *const kO;
 FOUNDATION_EXPORT NSString *const kX;

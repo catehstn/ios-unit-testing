@@ -1,6 +1,6 @@
-#import <Foundation/Foundation.h>
-
-@interface TicTacToeBoard : NSObject
+#ifndef TicTacToe_GameStates_h
+#define TicTacToe_GameStates_h
+#endif
 
 typedef NS_ENUM(NSInteger, TicTacToeStateType) {
   TicTacToeStateX,
@@ -16,12 +16,8 @@ typedef NS_ENUM(NSInteger, TicTacToeGameStateType) {
   TicTacToeGameStateOWin,
 };
 
-@property(nonatomic, readonly) TicTacToeGameStateType gameState;
-
-- (TicTacToeStateType)stateForXPos:(int)x yPos:(int)y;
-
-- (BOOL)playXPos:(int)x
-            yPos:(int)y
-         toState:(TicTacToeStateType)state;
-
-@end
+typedef NS_ENUM(NSInteger, TicTacToeGameType) {
+  TicTacToeGameUserX,
+  TicTacToeGameUserO,
+  TicTacToeGameUserXO
+};

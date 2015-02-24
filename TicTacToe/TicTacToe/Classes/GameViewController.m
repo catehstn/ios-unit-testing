@@ -1,6 +1,7 @@
 #import "GameViewController.h"
 
 #import "GameView.h"
+#import "TicTacToeBoard.h"
 
 @interface GameViewController ()
 @end

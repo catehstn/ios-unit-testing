@@ -1,5 +1,6 @@
 #import <Foundation/Foundation.h>
 
+#import "GameStates.h"
 #import "TicTacToeBoard.h"
 
 @interface ComputerPlayer : NSObject

@@ -1,9 +1,7 @@
 #import <UIKit/UIKit.h>
 
+#import "GameStates.h"
 #import "CHPresenter.h"
-
-// TODO(cate): Move enums, remove this import.
-#import "TicTacToeBoard.h"
 
 FOUNDATION_EXPORT NSString *const kOWin;
 FOUNDATION_EXPORT NSString *const kXWin;

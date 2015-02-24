@@ -1,7 +1,6 @@
 #import <UIKit/UIKit.h>
 
-// TODO(cate): Move enums into separate file.
-#import "TicTacToeBoard.h"
+#import "GameStates.h"
 
 @class TicTacToeButton;
 
