@@ -103,7 +103,7 @@
       return YES;
     }
     if (sqC == TicTacToeStateEmpty) {
-      [self playXPos:row yPos:1];
+      [self playXPos:row yPos:2];
       return YES;
     }
   }
