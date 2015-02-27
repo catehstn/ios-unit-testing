@@ -239,11 +239,11 @@
   OCMExpect([mockViewController_ updateDisplayFromBoard:mockBoard_]);
   OCMExpect([mockBoard_ gameState]).andReturn(TicTacToeGameStateNotEnded);
   OCMExpect([mockComputerPlayer_ makeNextMove]);
-  OCMExpect([mockViewController_ updateDisplayFromBoard:mockBoard_])
+  OCMExpect([mockViewController_ updateDisplayFromBoard:mockBoard_]);
+  OCMExpect([mockBoard_ gameState]).andReturn(TicTacToeGameStateNotEnded)
       .andDo(^(NSInvocation *invocation){
           [expectation fulfill];
       });
-  OCMExpect([mockBoard_ gameState]).andReturn(TicTacToeGameStateNotEnded);
 
   [button sendActionsForControlEvents:UIControlEventTouchUpInside];
 
