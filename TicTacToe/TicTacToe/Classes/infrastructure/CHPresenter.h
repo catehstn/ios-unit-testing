@@ -4,7 +4,7 @@
 
 @interface CHPresenter : NSObject
 
-@property(nonatomic, unsafe_unretained) CHViewController *viewController;
+@property(nonatomic, weak) CHViewController *viewController;
 
 - (void)viewLoaded;
 - (void)viewWillDisappear;
