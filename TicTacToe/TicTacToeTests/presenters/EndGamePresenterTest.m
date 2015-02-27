@@ -97,7 +97,7 @@
   BOOL (^verifyNavController)(id) = ^BOOL(id obj) {
       UINavigationController *navController = (UINavigationController *)obj;
       UIViewController *rootViewController = [[navController viewControllers] firstObject];
-      XCTAssertTrue([rootViewController isKindOfClass:[HomeViewController class]]);
+      return [rootViewController isKindOfClass:[HomeViewController class]];
   };
   OCMExpect([mockViewController_  presentViewController:[OCMArg checkWithBlock:verifyNavController]
                                                animated:YES
