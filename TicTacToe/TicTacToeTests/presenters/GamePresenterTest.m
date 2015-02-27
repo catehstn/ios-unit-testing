@@ -161,8 +161,9 @@
 
 - (void)testButtonPressedComputerPlaying {
   TicTacToeButton *button = [[TicTacToeButton alloc] initWithX:1 y:2];
+  NSArray *buttons = @[button];
 
-  OCMExpect([mockView_ buttons]).andReturn(@[button]);
+  OCMExpect([mockView_ buttons]).andReturn(buttons);
 
   [presenter_ viewLoaded];
 
@@ -172,8 +173,9 @@
 
 - (void)testButtonPressedSquareSetAlready {
   TicTacToeButton *button = [[TicTacToeButton alloc] initWithX:1 y:2];
+  NSArray *buttons = @[button];
 
-  OCMExpect([mockView_ buttons]).andReturn(@[button]);
+  OCMExpect([mockView_ buttons]).andReturn(buttons);
 
   [presenter_ viewLoaded];
 
@@ -185,8 +187,9 @@
 
 - (void)testButtonPressedThenGameOver {
   TicTacToeButton *button = [[TicTacToeButton alloc] initWithX:1 y:2];
+  NSArray *buttons = @[button];
 
-  OCMExpect([mockView_ buttons]).andReturn(@[button]);
+  OCMExpect([mockView_ buttons]).andReturn(buttons);
 
   [presenter_ viewLoaded];
 
@@ -230,8 +233,9 @@
       [self expectationWithDescription:@"testButtonPressedUserThenComputer"];
 
   TicTacToeButton *button = [[TicTacToeButton alloc] initWithX:1 y:2];
+  NSArray *buttons = @[button];
 
-  OCMExpect([mockView_ buttons]).andReturn(@[button]);
+  OCMExpect([mockView_ buttons]).andReturn(buttons);
 
   [presenter_ viewLoaded];
 
