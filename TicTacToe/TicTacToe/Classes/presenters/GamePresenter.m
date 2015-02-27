@@ -78,8 +78,8 @@ static const NSTimeInterval kComputerPlayDelay = 1;
   }
   TicTacToeButton *button = (TicTacToeButton *)sender;
   // Play
-  int x = [button x];
-  int y = [button y];
+  NSInteger x = [button x];
+  NSInteger y = [button y];
   if ([board_ playXPos:x yPos:y toState:turn_]) {
     [self handleEndOfTurn];
     [self maybePlayComputerTurn];
