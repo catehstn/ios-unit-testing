@@ -82,7 +82,7 @@
   BOOL (^verifyGameType)(id) = ^BOOL(id obj) {
       GameViewController *gameViewController = (GameViewController *) obj;
       GamePresenter *presenter = (GamePresenter *) [gameViewController presenter];
-      XCTAssertEqual([presenter gameType], TicTacToeGameUserO);
+      return [presenter gameType] == TicTacToeGameUserO;
   };
   OCMExpect([mockViewController_ pushViewController:[OCMArg checkWithBlock:verifyGameType]
                                            animated:YES]);
@@ -107,7 +107,7 @@
   BOOL (^verifyGameType)(id) = ^BOOL(id obj) {
     GameViewController *gameViewController = (GameViewController *) obj;
     GamePresenter *presenter = (GamePresenter *) [gameViewController presenter];
-    XCTAssertEqual([presenter gameType], TicTacToeGameUserX);
+    return [presenter gameType] == TicTacToeGameUserX;
   };
   OCMExpect([mockViewController_ pushViewController:[OCMArg checkWithBlock:verifyGameType]
                                            animated:YES]);
@@ -132,7 +132,7 @@
   BOOL (^verifyGameType)(id) = ^BOOL(id obj) {
     GameViewController *gameViewController = (GameViewController *) obj;
     GamePresenter *presenter = (GamePresenter *) [gameViewController presenter];
-    XCTAssertEqual([presenter gameType], TicTacToeGameUserXO);
+    return [presenter gameType] == TicTacToeGameUserXO;
   };
   OCMExpect([mockViewController_ pushViewController:[OCMArg checkWithBlock:verifyGameType]
                                            animated:YES]);
