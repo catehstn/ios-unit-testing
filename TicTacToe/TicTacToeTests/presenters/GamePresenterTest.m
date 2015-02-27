@@ -143,7 +143,7 @@
   [self setUpExpectationsForButtons:buttons];
 
   // Computer should play.
-  OCMExpect([mockBoard_ gameState]).andReturn(TicTacToeGameStateNotEnded);
+  OCMStub([mockBoard_ gameState]).andReturn(TicTacToeGameStateNotEnded);
   OCMExpect([mockComputerPlayer_ makeNextMove]);
   OCMExpect([mockViewController_ updateDisplayFromBoard:mockBoard_])
       .andDo(^(NSInvocation *invocation){
@@ -192,7 +192,7 @@
 
   OCMExpect([mockBoard_ playXPos:1 yPos:2 toState:TicTacToeStateO]).andReturn(YES);
   OCMExpect([mockViewController_ updateDisplayFromBoard:mockBoard_]);
-  OCMExpect([mockBoard_ gameState]).andReturn(TicTacToeGameStateBoardFull);
+  OCMStub([mockBoard_ gameState]).andReturn(TicTacToeGameStateBoardFull);
   OCMExpect([mockViewController_ pushViewController:[OCMArg any] animated:YES]);
 
   [button sendActionsForControlEvents:UIControlEventTouchUpInside];
@@ -237,6 +237,7 @@
 
   OCMExpect([mockBoard_ playXPos:1 yPos:2 toState:TicTacToeStateO]).andReturn(YES);
   OCMExpect([mockViewController_ updateDisplayFromBoard:mockBoard_]);
+  OCMExpect([mockBoard_ gameState]).andReturn(TicTacToeGameStateNotEnded);
   OCMExpect([mockBoard_ gameState]).andReturn(TicTacToeGameStateNotEnded);
   OCMExpect([mockComputerPlayer_ makeNextMove]);
   OCMExpect([mockViewController_ updateDisplayFromBoard:mockBoard_]);
