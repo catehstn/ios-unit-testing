@@ -30,7 +30,6 @@
 }
 
 - (void)makeNextMove {
-  // TODO(cate): Do better.
   // Fill in to make 3 if possible.
   if ([self complete3IfPossibleForType:type_]) {
     return;
@@ -62,7 +61,47 @@
       return YES;
     }
   }
-  // TODO(cate):Diagonals.
+
+  // Diagonal TL-BR.
+  TicTacToeStateType sqA = [board_ stateForXPos:0 yPos:0];
+  TicTacToeStateType sqB = [board_ stateForXPos:1 yPos:1];
+  TicTacToeStateType sqC = [board_ stateForXPos:2 yPos:2];
+
+  if ([self checkState:type forSquareA:sqA squareB:sqB squareC:sqC]) {
+    if (sqA == TicTacToeStateEmpty) {
+      [self playXPos:0 yPos:0];
+      return YES;
+    }
+    if (sqB == TicTacToeStateEmpty) {
+      [self playXPos:1 yPos:1];
+      return YES;
+    }
+    if (sqC == TicTacToeStateEmpty) {
+      [self playXPos:2 yPos:2];
+      return YES;
+    }
+  }
+
+  // Diagonal TR-BL.
+  sqA = [board_ stateForXPos:0 yPos:2];
+  sqB = [board_ stateForXPos:1 yPos:1];
+  sqC = [board_ stateForXPos:2 yPos:0];
+
+  if ([self checkState:type forSquareA:sqA squareB:sqB squareC:sqC]) {
+    if (sqA == TicTacToeStateEmpty) {
+      [self playXPos:0 yPos:2];
+      return YES;
+    }
+    if (sqB == TicTacToeStateEmpty) {
+      [self playXPos:1 yPos:1];
+      return YES;
+    }
+    if (sqC == TicTacToeStateEmpty) {
+      [self playXPos:2 yPos:0];
+      return YES;
+    }
+  }
+
   return NO;
 }
 
