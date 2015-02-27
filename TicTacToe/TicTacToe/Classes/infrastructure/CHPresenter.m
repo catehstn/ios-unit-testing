@@ -1,7 +1,7 @@
 #import "CHPresenter.h"
 
 @interface CHPresenter () {
-  __unsafe_unretained CHViewController *viewController_;
+  __weak CHViewController *viewController_;
 }
 
 @end
