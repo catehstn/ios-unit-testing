@@ -1,5 +1,7 @@
 #import "ComputerPlayer.h"
 
+#import "TicTacToeBoard.h"
+
 @interface ComputerPlayer () {
   TicTacToeBoard *board_;
   TicTacToeStateType type_;
