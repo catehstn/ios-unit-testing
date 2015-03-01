@@ -24,6 +24,15 @@
   }
 }
 
+- (void)testPlayValid {
+  for (int x = 0; x < 3; x++) {
+    for (int y = 0; y < 3; y++) {
+      XCTAssertTrue([board_ playXPos:x yPos:y toState:TicTacToeStateO]);
+      XCTAssertEqual([board_ stateForXPos:x yPos:y], TicTacToeStateO);
+    }
+  }
+}
+
 - (void)testStateNegativeX {
   XCTAssertEqual([board_ stateForXPos:-2 yPos:2], TicTacToeStateInvalid);
 }
@@ -62,15 +71,6 @@
 
 - (void)testPlayInvalidState {
   XCTAssertFalse([board_ playXPos:2 yPos:2 toState:TicTacToeStateInvalid]);
-}
-
-- (void)testPlayValid {
-  for (int x = 0; x < 3; x++) {
-    for (int y = 0; y < 3; y++) {
-      XCTAssertTrue([board_ playXPos:x yPos:y toState:TicTacToeStateO]);
-      XCTAssertEqual([board_ stateForXPos:x yPos:y], TicTacToeStateO);
-    }
-  }
 }
 
 - (void)testPlayOverOtherPlay {
