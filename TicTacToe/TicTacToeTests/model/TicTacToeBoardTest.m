@@ -68,6 +68,7 @@
   for (int x = 0; x < 3; x++) {
     for (int y = 0; y < 3; y++) {
       XCTAssertTrue([board_ playXPos:x yPos:y toState:TicTacToeStateO]);
+      XCTAssertEqual(TicTacToeStateO, [board_ stateForXPos:x yPos:y]);
     }
   }
 }
@@ -75,6 +76,7 @@
 - (void)testPlayOverOtherPlay {
   XCTAssertTrue([board_ playXPos:1 yPos:1 toState:TicTacToeStateX]);
   XCTAssertFalse([board_ playXPos:1 yPos:1 toState:TicTacToeStateO]);
+  XCTAssertEqual(TicTacToeStateX, [board_ stateForXPos:1 yPos:1]);
 }
 
 - (void)testGameStateWithSpaces {
