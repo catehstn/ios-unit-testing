@@ -9,15 +9,17 @@
   ComputerPlayer *player_;
 }
 
+// Counts how many squares are filled with that type.
+- (NSInteger)countFilledSquares:(TicTacToeStateType)type;
 @end
 
 @implementation ComputerPlayerTest
 
-- (NSInteger)countFilledSquares {
+- (NSInteger)countFilledSquares:(TicTacToeStateType)type {
   int count = 0;
   for (int x = 0; x < 3; x++) {
     for (int y = 0; y < 3; y++) {
-      if ([board_ stateForXPos:x yPos:y] != TicTacToeStateEmpty) {
+      if ([board_ stateForXPos:x yPos:y] == type) {
         count++;
       }
     }
@@ -33,25 +35,25 @@
 }
 
 - (void)testNextMove {
-  XCTAssertEqual([self countFilledSquares], 0);
+  XCTAssertEqual([self countFilledSquares:TicTacToeStateO], 0);
   [player_ makeNextMove];
-  XCTAssertEqual([self countFilledSquares], 1);
+  XCTAssertEqual([self countFilledSquares:TicTacToeStateO], 1);
   [player_ makeNextMove];
-  XCTAssertEqual([self countFilledSquares], 2);
+  XCTAssertEqual([self countFilledSquares:TicTacToeStateO], 2);
   [player_ makeNextMove];
-  XCTAssertEqual([self countFilledSquares], 3);
+  XCTAssertEqual([self countFilledSquares:TicTacToeStateO], 3);
   [player_ makeNextMove];
-  XCTAssertEqual([self countFilledSquares], 4);
+  XCTAssertEqual([self countFilledSquares:TicTacToeStateO], 4);
   [player_ makeNextMove];
-  XCTAssertEqual([self countFilledSquares], 5);
+  XCTAssertEqual([self countFilledSquares:TicTacToeStateO], 5);
   [player_ makeNextMove];
-  XCTAssertEqual([self countFilledSquares], 6);
+  XCTAssertEqual([self countFilledSquares:TicTacToeStateO], 6);
   [player_ makeNextMove];
-  XCTAssertEqual([self countFilledSquares], 7);
+  XCTAssertEqual([self countFilledSquares:TicTacToeStateO], 7);
   [player_ makeNextMove];
-  XCTAssertEqual([self countFilledSquares], 8);
+  XCTAssertEqual([self countFilledSquares:TicTacToeStateO], 8);
   [player_ makeNextMove];
-  XCTAssertEqual([self countFilledSquares], 9);
+  XCTAssertEqual([self countFilledSquares:TicTacToeStateO], 9);
 }
 
 - (void)testCompleteRowOO_ {
