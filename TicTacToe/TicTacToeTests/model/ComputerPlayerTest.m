@@ -287,6 +287,28 @@
 
   [player_ makeNextMove];
 
+  XCTAssertTrue([board_ stateForXPos:1 yPos:1] == TicTacToeStateO ||
+                [board_ stateForXPos:2 yPos:1] == TicTacToeStateO);
+  XCTAssertEqual([board_ gameState], TicTacToeGameStateOWin);
+}
+
+- (void)testWinOrLose {
+  /**
+   X | X | O
+   O | _ | _
+   X | X | O
+   */
+  [board_ playXPos:0 yPos:0 toState:TicTacToeStateX];
+  [board_ playXPos:1 yPos:0 toState:TicTacToeStateX];
+  [board_ playXPos:2 yPos:0 toState:TicTacToeStateO];
+  [board_ playXPos:0 yPos:1 toState:TicTacToeStateO];
+  [board_ playXPos:0 yPos:2 toState:TicTacToeStateX];
+  [board_ playXPos:1 yPos:2 toState:TicTacToeStateX];
+  [board_ playXPos:2 yPos:2 toState:TicTacToeStateO];
+
+  [player_ makeNextMove];
+
+  XCTAssertEqual([board_ stateForXPos:2 yPos:1], TicTacToeStateO);
   XCTAssertEqual([board_ gameState], TicTacToeGameStateOWin);
 }
 
