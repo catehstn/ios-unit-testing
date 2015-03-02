@@ -272,4 +272,22 @@
   XCTAssertEqual([board_ stateForXPos:2 yPos:0], TicTacToeStateO);
 }
 
+- (void)testMultipleOptions {
+  /** 
+     O | X | O
+     _ | _ | _
+     X | X | O
+   */
+  [board_ playXPos:0 yPos:0 toState:TicTacToeStateO];
+  [board_ playXPos:1 yPos:0 toState:TicTacToeStateX];
+  [board_ playXPos:2 yPos:0 toState:TicTacToeStateO];
+  [board_ playXPos:0 yPos:2 toState:TicTacToeStateX];
+  [board_ playXPos:1 yPos:2 toState:TicTacToeStateX];
+  [board_ playXPos:2 yPos:2 toState:TicTacToeStateO];
+
+  [player_ makeNextMove];
+
+  XCTAssertEqual([board_ gameState], TicTacToeGameStateOWin);
+}
+
 @end
