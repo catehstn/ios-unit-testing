@@ -19,6 +19,7 @@
   mockPresenter_ = OCMStrictClassMock([HomePresenter class]);
   OCMExpect([mockPresenter_ setViewController:[OCMArg any]]);
   viewController_ = [[HomeViewController alloc] initWithPresenter:mockPresenter_];
+  OCMVerify([mockPresenter_ setViewController:viewController_]);
 }
 
 - (void)tearDown {
