@@ -128,14 +128,17 @@
 }
 
 - (void)testViewLoadedComputerGoesFirst {
+  // Create the expectation.
   XCTestExpectation *expectation =
       [self expectationWithDescription:@"testViewLoadedComputerGoesFirst"];
 
+  // Create the presenter to test.
   presenter_ = [[GamePresenter alloc] initWithBoard:mockBoard_
                                      computerPlayer:mockComputerPlayer_
                                            gameType:TicTacToeGameUserX];
   [presenter_ setViewController:mockViewController_];
 
+  // Mock and stub some buttons.
   id mockButton1 = OCMStrictClassMock([UIButton class]);
   id mockButton2 = OCMStrictClassMock([UIButton class]);
   id mockButton3 = OCMStrictClassMock([UIButton class]);
@@ -145,6 +148,7 @@
   // Computer should play.
   OCMStub([mockBoard_ gameState]).andReturn(TicTacToeGameStateNotEnded);
   OCMExpect([mockComputerPlayer_ makeNextMove]);
+  // Last thing that should happen after the computer plays, so fulfill expectation.
   OCMExpect([mockViewController_ updateDisplayFromBoard:mockBoard_])
       .andDo(^(NSInvocation *invocation){
           [expectation fulfill];
@@ -152,8 +156,10 @@
 
   [presenter_ viewLoaded];
 
+  // Wait for expecations.
   [self waitForExpectationsWithTimeout:2 handler:nil];
 
+  // Verify the buttons.
   OCMVerifyAll(mockButton1);
   OCMVerifyAll(mockButton2);
   OCMVerifyAll(mockButton3);
