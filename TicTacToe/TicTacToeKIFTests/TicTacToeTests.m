@@ -2,8 +2,10 @@
 
 @implementation TicTacToeTests
 
-- (void)testLoadHomeScreen {
+- (void)testLoadHomeScreenTapO {
   [tester waitForViewWithAccessibilityLabel:@"O"];
+  [tester tapViewWithAccessibilityLabel:@"O"];
+  [tester tapViewWithAccessibilityLabel:@"Back"];
 }
 
 @end
