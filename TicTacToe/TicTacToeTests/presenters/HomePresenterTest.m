@@ -85,8 +85,11 @@
   OCMStub([mockView_ playXOButton]).andReturn(mockXOButton);
 
   BOOL (^verifyGameType)(id) = ^BOOL(id obj) {
+      // Cast to a GameViewController.
       GameViewController *gameViewController = (GameViewController *) obj;
+      // Access the presenter.
       GamePresenter *presenter = (GamePresenter *) [gameViewController presenter];
+      // Make sure gameType is correct.
       return [presenter gameType] == TicTacToeGameUserO;
   };
   OCMExpect([mockViewController_ pushViewController:[OCMArg checkWithBlock:verifyGameType]
