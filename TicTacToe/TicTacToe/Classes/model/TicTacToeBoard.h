@@ -12,8 +12,8 @@
 - (TicTacToeStateType)stateForXPos:(int)x yPos:(int)y;
 
 // Attempts to play in the position (x,y). Returns YES for success, NO if not.
-- (BOOL)playXPos:(int)x
-            yPos:(int)y
+- (BOOL)playXPos:(NSInteger)x
+            yPos:(NSInteger)y
          toState:(TicTacToeStateType)state;
 
 @end

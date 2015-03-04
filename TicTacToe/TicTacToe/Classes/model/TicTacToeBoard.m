@@ -73,7 +73,7 @@
   }
 }
 
-- (BOOL)playXPos:(int)x yPos:(int)y toState:(TicTacToeStateType)state {
+- (BOOL)playXPos:(NSInteger)x yPos:(NSInteger)y toState:(TicTacToeStateType)state {
   if (x < 0 || x > 2 || y < 0 || y > 2 ||
       state == TicTacToeStateEmpty || state == TicTacToeStateInvalid ||
       [board_[x][y] integerValue] != TicTacToeStateEmpty) {
