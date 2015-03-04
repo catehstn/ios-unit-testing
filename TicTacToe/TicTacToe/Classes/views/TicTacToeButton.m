@@ -16,6 +16,7 @@
   if (self) {
     x_ = x;
     y_ = y;
+    [self setAccessibilityLabel:[NSString stringWithFormat:@"%ld,%ld", (long)x, (long)y]];
   }
   return self;
 }
