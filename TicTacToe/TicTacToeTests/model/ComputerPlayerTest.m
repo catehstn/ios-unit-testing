@@ -57,39 +57,19 @@
 }
 
 - (void)testCompleteRowOO_ {
-  [board_ playXPos:0 yPos:0 toState:TicTacToeStateO];
-  [board_ playXPos:1 yPos:0 toState:TicTacToeStateO];
-
-  [player_ makeNextMove];
-
-  XCTAssertEqual([board_ stateForXPos:2 yPos:0], TicTacToeStateO);
+  // TODO: Fill this in.
 }
 
 - (void)testCompleteRowO_O {
-  [board_ playXPos:0 yPos:1 toState:TicTacToeStateO];
-  [board_ playXPos:2 yPos:1 toState:TicTacToeStateO];
-
-  [player_ makeNextMove];
-
-  XCTAssertEqual([board_ stateForXPos:1 yPos:1], TicTacToeStateO);
+  // TODO: Fill this in.
 }
 
 - (void)testCompleteRow_OO {
-  [board_ playXPos:1 yPos:2 toState:TicTacToeStateO];
-  [board_ playXPos:2 yPos:2 toState:TicTacToeStateO];
-
-  [player_ makeNextMove];
-
-  XCTAssertEqual([board_ stateForXPos:0 yPos:2], TicTacToeStateO);
+  // TODO: Fill this in.
 }
 
 - (void)testCompleteColumnOO_ {
-  [board_ playXPos:0 yPos:0 toState:TicTacToeStateO];
-  [board_ playXPos:0 yPos:1 toState:TicTacToeStateO];
-
-  [player_ makeNextMove];
-
-  XCTAssertEqual([board_ stateForXPos:0 yPos:2], TicTacToeStateO);
+  // TODO: Fill this in.
 }
 
 - (void)testCompleteColumnO_O {
@@ -102,174 +82,79 @@
 }
 
 - (void)testCompleteColumn_OO {
-  [board_ playXPos:2 yPos:1 toState:TicTacToeStateO];
-  [board_ playXPos:2 yPos:2 toState:TicTacToeStateO];
-
-  [player_ makeNextMove];
-
-  XCTAssertEqual([board_ stateForXPos:2 yPos:0], TicTacToeStateO);
+  // TODO: Fill this in.
 }
 
 - (void)testBlockCompleteRowXX_ {
-  [board_ playXPos:0 yPos:0 toState:TicTacToeStateX];
-  [board_ playXPos:1 yPos:0 toState:TicTacToeStateX];
-
-  [player_ makeNextMove];
-
-  XCTAssertEqual([board_ stateForXPos:2 yPos:0], TicTacToeStateO);
+  // TODO: Fill this in.
 }
 
 - (void)testBlockCompleteRowX_X {
-  [board_ playXPos:0 yPos:1 toState:TicTacToeStateX];
-  [board_ playXPos:2 yPos:1 toState:TicTacToeStateX];
-
-  [player_ makeNextMove];
-
-  XCTAssertEqual([board_ stateForXPos:1 yPos:1], TicTacToeStateO);
+  // TODO: Fill this in.
 }
 
 - (void)testBlockCompleteRow_XX {
-  [board_ playXPos:1 yPos:2 toState:TicTacToeStateX];
-  [board_ playXPos:2 yPos:2 toState:TicTacToeStateX];
-
-  [player_ makeNextMove];
-
-  XCTAssertEqual([board_ stateForXPos:0 yPos:2], TicTacToeStateO);
+  // TODO: Fill this in.
 }
 
 - (void)testBlockCompleteColumnXX_ {
-  [board_ playXPos:0 yPos:0 toState:TicTacToeStateX];
-  [board_ playXPos:0 yPos:1 toState:TicTacToeStateX];
-
-  [player_ makeNextMove];
-
-  XCTAssertEqual([board_ stateForXPos:0 yPos:2], TicTacToeStateO);
+  // TODO: Fill this in.
 }
 
 - (void)testBlockCompleteColumnX_X {
-  [board_ playXPos:1 yPos:0 toState:TicTacToeStateX];
-  [board_ playXPos:1 yPos:2 toState:TicTacToeStateX];
-
-  [player_ makeNextMove];
-
-  XCTAssertEqual([board_ stateForXPos:1 yPos:1], TicTacToeStateO);
+  // TODO: Fill this in.
 }
 
 - (void)testBlockCompleteColumn_XX {
-  [board_ playXPos:2 yPos:1 toState:TicTacToeStateX];
-  [board_ playXPos:2 yPos:2 toState:TicTacToeStateX];
-
-  [player_ makeNextMove];
-
-  XCTAssertEqual([board_ stateForXPos:2 yPos:0], TicTacToeStateO);
+  // TODO: Fill this in.
 }
 
 - (void)testCompleteDiagonal1OO_ {
-  [board_ playXPos:0 yPos:0 toState:TicTacToeStateO];
-  [board_ playXPos:1 yPos:1 toState:TicTacToeStateO];
-
-  [player_ makeNextMove];
-
-  XCTAssertEqual([board_ stateForXPos:2 yPos:2], TicTacToeStateO);
+  // TODO: Fill this in.
 }
 
 - (void)testCompleteDiagonal1O_O {
-  [board_ playXPos:0 yPos:0 toState:TicTacToeStateO];
-  [board_ playXPos:2 yPos:2 toState:TicTacToeStateO];
-
-  [player_ makeNextMove];
-
-  XCTAssertEqual([board_ stateForXPos:1 yPos:1], TicTacToeStateO);
+  // TODO: Fill this in.
 }
 
 - (void)testCompleteDiagonal1_OO {
-  [board_ playXPos:1 yPos:1 toState:TicTacToeStateO];
-  [board_ playXPos:2 yPos:2 toState:TicTacToeStateO];
-
-  [player_ makeNextMove];
-
-  XCTAssertEqual([board_ stateForXPos:0 yPos:0], TicTacToeStateO);
+  // TODO: Fill this in.
 }
 
 - (void)testCompleteDiagonal2OO_ {
-  [board_ playXPos:0 yPos:2 toState:TicTacToeStateO];
-  [board_ playXPos:1 yPos:1 toState:TicTacToeStateO];
-
-  [player_ makeNextMove];
-
-  XCTAssertEqual([board_ stateForXPos:2 yPos:0], TicTacToeStateO);
+  // TODO: Fill this in.
 }
 
 - (void)testCompleteDiagonal2O_O {
-  [board_ playXPos:0 yPos:2 toState:TicTacToeStateO];
-  [board_ playXPos:2 yPos:0 toState:TicTacToeStateO];
-
-  [player_ makeNextMove];
-
-  XCTAssertEqual([board_ stateForXPos:1 yPos:1], TicTacToeStateO);
+  // TODO: Fill this in.
 }
 
 - (void)testCompleteDiagonal2_OO {
-  [board_ playXPos:1 yPos:1 toState:TicTacToeStateO];
-  [board_ playXPos:0 yPos:2 toState:TicTacToeStateO];
-
-  [player_ makeNextMove];
-
-  XCTAssertEqual([board_ stateForXPos:2 yPos:0], TicTacToeStateO);
+  // TODO: Fill this in.
 }
 
 - (void)testBlockDiagonal1OO_ {
-  [board_ playXPos:0 yPos:0 toState:TicTacToeStateX];
-  [board_ playXPos:1 yPos:1 toState:TicTacToeStateX];
-
-  [player_ makeNextMove];
-
-  XCTAssertEqual([board_ stateForXPos:2 yPos:2], TicTacToeStateO);
+  // TODO: Fill this in.
 }
 
 - (void)testBlockDiagonal1O_O {
-  [board_ playXPos:0 yPos:0 toState:TicTacToeStateX];
-  [board_ playXPos:2 yPos:2 toState:TicTacToeStateX];
-
-  [player_ makeNextMove];
-
-  XCTAssertEqual([board_ stateForXPos:1 yPos:1], TicTacToeStateO);
+  // TODO: Fill this in.
 }
 
 - (void)testBlockDiagonal1_OO {
-  [board_ playXPos:1 yPos:1 toState:TicTacToeStateX];
-  [board_ playXPos:2 yPos:2 toState:TicTacToeStateX];
-
-  [player_ makeNextMove];
-
-  XCTAssertEqual([board_ stateForXPos:0 yPos:0], TicTacToeStateO);
+  // TODO: Fill this in.
 }
 
 - (void)testBlockDiagonal2OO_ {
-  [board_ playXPos:0 yPos:2 toState:TicTacToeStateX];
-  [board_ playXPos:1 yPos:1 toState:TicTacToeStateX];
-
-  [player_ makeNextMove];
-
-  XCTAssertEqual([board_ stateForXPos:2 yPos:0], TicTacToeStateO);
+  // TODO: Fill this in.
 }
 
 - (void)testBlockDiagonal2O_O {
-  [board_ playXPos:0 yPos:2 toState:TicTacToeStateX];
-  [board_ playXPos:2 yPos:0 toState:TicTacToeStateX];
-
-  [player_ makeNextMove];
-
-  XCTAssertEqual([board_ stateForXPos:1 yPos:1], TicTacToeStateO);
+  // TODO: Fill this in.
 }
 
 - (void)testBlockDiagonal2_OO {
-  [board_ playXPos:1 yPos:1 toState:TicTacToeStateX];
-  [board_ playXPos:0 yPos:2 toState:TicTacToeStateX];
-
-  [player_ makeNextMove];
-
-  XCTAssertEqual([board_ stateForXPos:2 yPos:0], TicTacToeStateO);
+  // TODO: Fill this in.
 }
 
 - (void)testMultipleOptions {
@@ -287,9 +172,7 @@
 
   [player_ makeNextMove];
 
-  XCTAssertTrue([board_ stateForXPos:1 yPos:1] == TicTacToeStateO ||
-                [board_ stateForXPos:2 yPos:1] == TicTacToeStateO);
-  XCTAssertEqual([board_ gameState], TicTacToeGameStateOWin);
+  // TODO: Fill this in. How can you tell if the test has passed?
 }
 
 - (void)testWinOrLose {
@@ -308,8 +191,7 @@
 
   [player_ makeNextMove];
 
-  XCTAssertEqual([board_ stateForXPos:2 yPos:1], TicTacToeStateO);
-  XCTAssertEqual([board_ gameState], TicTacToeGameStateOWin);
+  // TODO: Fill this in. How can you tell if the test has passed?
 }
 
 @end
