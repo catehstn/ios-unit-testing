@@ -65,7 +65,7 @@
   return TicTacToeGameStateBoardFull;
 }
 
-- (TicTacToeStateType)stateForXPos:(int)x yPos:(int)y {
+- (TicTacToeStateType)stateForXPos:(NSInteger)x yPos:(NSInteger)y {
   if (x < 0 || x > 2 || y < 0 || y > 2) {
     return TicTacToeStateInvalid;
   } else {
