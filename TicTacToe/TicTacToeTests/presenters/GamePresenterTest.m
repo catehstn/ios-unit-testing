@@ -109,22 +109,7 @@
 }
 
 - (void)testViewLoadedComputerNotFirst {
-  presenter_ = [[GamePresenter alloc] initWithBoard:mockBoard_
-                                     computerPlayer:mockComputerPlayer_
-                                           gameType:TicTacToeGameUserO];
-  [presenter_ setViewController:mockViewController_];
-
-  id mockButton1 = OCMStrictClassMock([UIButton class]);
-  id mockButton2 = OCMStrictClassMock([UIButton class]);
-  id mockButton3 = OCMStrictClassMock([UIButton class]);
-  NSArray *buttons = @[mockButton1, mockButton2, mockButton3];
-  [self setUpExpectationsForButtons:buttons];
-
-  [presenter_ viewLoaded];
-
-  OCMVerifyAll(mockButton1);
-  OCMVerifyAll(mockButton2);
-  OCMVerifyAll(mockButton3);
+  // TODO: Fill this in.
 }
 
 - (void)testViewLoadedComputerGoesFirst {
@@ -178,33 +163,11 @@
 }
 
 - (void)testButtonPressedSquareSetAlready {
-  TicTacToeButton *button = [[TicTacToeButton alloc] initWithX:1 y:2];
-  NSArray *buttons = @[button];
-
-  OCMExpect([mockView_ buttons]).andReturn(buttons);
-
-  [presenter_ viewLoaded];
-
-  // Return NO to indicate square filled, nothing else happens.
-  OCMExpect([mockBoard_ playXPos:1 yPos:2 toState:TicTacToeStateO]).andReturn(NO);
-
-  [button sendActionsForControlEvents:UIControlEventTouchUpInside];
+  // TODO: Fill this in.
 }
 
 - (void)testButtonPressedThenGameOver {
-  TicTacToeButton *button = [[TicTacToeButton alloc] initWithX:1 y:2];
-  NSArray *buttons = @[button];
-
-  OCMExpect([mockView_ buttons]).andReturn(buttons);
-
-  [presenter_ viewLoaded];
-
-  OCMExpect([mockBoard_ playXPos:1 yPos:2 toState:TicTacToeStateO]).andReturn(YES);
-  OCMExpect([mockViewController_ updateDisplayFromBoard:mockBoard_]);
-  OCMStub([mockBoard_ gameState]).andReturn(TicTacToeGameStateBoardFull);
-  OCMExpect([mockViewController_ pushViewController:[OCMArg any] animated:YES]);
-
-  [button sendActionsForControlEvents:UIControlEventTouchUpInside];
+  // TODO: Fill this in.
 }
 
 - (void)testButtonPressedUserThenUser {
@@ -235,30 +198,7 @@
 }
 
 - (void)testButtonPressedUserThenComputer {
-  XCTestExpectation *expectation =
-      [self expectationWithDescription:@"testButtonPressedUserThenComputer"];
-
-  TicTacToeButton *button = [[TicTacToeButton alloc] initWithX:1 y:2];
-  NSArray *buttons = @[button];
-
-  OCMExpect([mockView_ buttons]).andReturn(buttons);
-
-  [presenter_ viewLoaded];
-
-  OCMExpect([mockBoard_ playXPos:1 yPos:2 toState:TicTacToeStateO]).andReturn(YES);
-  OCMExpect([mockViewController_ updateDisplayFromBoard:mockBoard_]);
-  OCMExpect([mockBoard_ gameState]).andReturn(TicTacToeGameStateNotEnded);
-  OCMExpect([mockBoard_ gameState]).andReturn(TicTacToeGameStateNotEnded);
-  OCMExpect([mockComputerPlayer_ makeNextMove]);
-  OCMExpect([mockViewController_ updateDisplayFromBoard:mockBoard_]);
-  OCMExpect([mockBoard_ gameState]).andReturn(TicTacToeGameStateNotEnded)
-      .andDo(^(NSInvocation *invocation){
-          [expectation fulfill];
-      });
-
-  [button sendActionsForControlEvents:UIControlEventTouchUpInside];
-
-  [self waitForExpectationsWithTimeout:2 handler:nil];
+  // TODO: Fill this in.
 }
 
 @end
