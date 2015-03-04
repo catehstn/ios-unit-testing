@@ -12,6 +12,7 @@
   id mockPresenter_;
   GameViewController *viewController_;
 }
+- (void)setExpectationsForLoadingView;
 @end
 
 @implementation GameViewControllerTest
@@ -30,11 +31,14 @@
   [super tearDown];
 }
 
-- (void)testViewLoaded {
+- (void)setExpectationsForLoadingView {
   OCMExpect([mockPresenter_ leftNavigationButtons]);
   OCMExpect([mockPresenter_ rightNavigationButtons]);
   OCMExpect([mockPresenter_ viewLoaded]);
+}
 
+- (void)testView {
+  [self setExpectationsForLoadingView];
   XCTAssertNotNil([viewController_ gameView]);
 }
 
@@ -55,6 +59,8 @@
 }
 
 - (void)testUpdateBoardSymmetrical {
+  [self setExpectationsForLoadingView];
+
   TicTacToeBoard *board = [[TicTacToeBoard alloc] init];
   [board playXPos:0 yPos:0 toState:TicTacToeStateO];
   [board playXPos:1 yPos:0 toState:TicTacToeStateX];
@@ -66,7 +72,6 @@
   [board playXPos:1 yPos:2 toState:TicTacToeStateX];
   [board playXPos:2 yPos:2 toState:TicTacToeStateO];
 
-  [viewController_ loadView];
   [viewController_ updateDisplayFromBoard:board];
   GameView *gameView = [viewController_ gameView];
 
@@ -82,6 +87,8 @@
 }
 
 - (void)testUpdateBoardNotSymmetrical {
+  [self setExpectationsForLoadingView];
+
   TicTacToeBoard *board = [[TicTacToeBoard alloc] init];
   [board playXPos:0 yPos:0 toState:TicTacToeStateO];
   [board playXPos:1 yPos:0 toState:TicTacToeStateO];
@@ -93,7 +100,6 @@
   [board playXPos:1 yPos:2 toState:TicTacToeStateX];
   [board playXPos:2 yPos:2 toState:TicTacToeStateX];
 
-  [viewController_ loadView];
   [viewController_ updateDisplayFromBoard:board];
   GameView *gameView = [viewController_ gameView];
 
