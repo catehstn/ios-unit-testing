@@ -28,6 +28,14 @@
   [super tearDown];
 }
 
+- (void)testViewLoaded {
+  OCMExpect([mockPresenter_ leftNavigationButtons]);
+  OCMExpect([mockPresenter_ rightNavigationButtons]);
+  OCMExpect([mockPresenter_ viewLoaded]);
+
+  XCTAssertNotNil([viewController_ endGameView]);
+}
+
 - (void)testSetGameStateText {
   OCMExpect([mockPresenter_ leftNavigationButtons]).andReturn([NSArray array]);
   OCMExpect([mockPresenter_ rightNavigationButtons]).andReturn([NSArray array]);
