@@ -31,7 +31,10 @@
 }
 
 - (void)testViewLoaded {
-  [viewController_ loadView];
+  OCMExpect([mockPresenter_ leftNavigationButtons]);
+  OCMExpect([mockPresenter_ rightNavigationButtons]);
+  OCMExpect([mockPresenter_ viewLoaded]);
+
   XCTAssertNotNil([viewController_ gameView]);
 }
 
