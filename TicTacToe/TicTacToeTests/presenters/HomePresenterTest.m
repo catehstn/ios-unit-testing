@@ -45,14 +45,17 @@
 }
 
 - (void)testAddTargetsToButtons {
+  // Create mocks for buttons.
   id mockOButton = OCMStrictClassMock([UIButton class]);
   id mockXButton = OCMStrictClassMock([UIButton class]);
   id mockXOButton = OCMStrictClassMock([UIButton class]);
 
+  // Stub the view to return our mock buttons.
   OCMStub([mockView_ playOButton]).andReturn(mockOButton);
   OCMStub([mockView_ playXButton]).andReturn(mockXButton);
   OCMStub([mockView_ playXOButton]).andReturn(mockXOButton);
 
+  // Expect targets to be set on them.
   OCMExpect([mockOButton addTarget:presenter_
                             action:[OCMArg anySelector]
                   forControlEvents:UIControlEventTouchUpInside]);
@@ -63,8 +66,10 @@
                              action:[OCMArg anySelector]
                    forControlEvents:UIControlEventTouchUpInside]);
 
+  // Call the method under test.
   [presenter_ viewLoaded];
 
+  // Verify the buttons.
   OCMVerifyAll(mockOButton);
   OCMVerifyAll(mockXButton);
   OCMVerifyAll(mockXOButton);
