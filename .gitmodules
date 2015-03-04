@@ -1,0 +1,3 @@
+[submodule "KIF"]
+	path = KIF
+	url = git://github.com/catehstn/KIF.git
