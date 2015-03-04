@@ -56,39 +56,6 @@
   }
 }
 
-- (void)testCreateViewControllerUserO {
-  GameViewController *viewController =
-      (GameViewController *) [GamePresenter createViewControllerWithGameType:TicTacToeGameUserO];
-  XCTAssertNotNil(viewController);
-
-  GamePresenter *presenter = (GamePresenter *) [viewController presenter];
-  XCTAssertNotNil(presenter);
-
-  XCTAssertEqual([presenter gameType], TicTacToeGameUserO);
-}
-
-- (void)testCreateViewControllerUserX {
-  GameViewController *viewController =
-      (GameViewController *) [GamePresenter createViewControllerWithGameType:TicTacToeGameUserX];
-  XCTAssertNotNil(viewController);
-
-  GamePresenter *presenter = (GamePresenter *) [viewController presenter];
-  XCTAssertNotNil(presenter);
-
-  XCTAssertEqual([presenter gameType], TicTacToeGameUserX);
-}
-
-- (void)testCreateViewControllerUserXO {
-  GameViewController *viewController =
-      (GameViewController *) [GamePresenter createViewControllerWithGameType:TicTacToeGameUserXO];
-  XCTAssertNotNil(viewController);
-
-  GamePresenter *presenter = (GamePresenter *) [viewController presenter];
-  XCTAssertNotNil(presenter);
-
-  XCTAssertEqual([presenter gameType], TicTacToeGameUserXO);
-}
-
 - (void)testViewLoadedComputerNotPlaying {
   presenter_ = [[GamePresenter alloc] initWithBoard:mockBoard_
                                      computerPlayer:mockComputerPlayer_
