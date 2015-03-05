@@ -29,9 +29,7 @@
 }
 
 - (void)testViewLoaded {
-  OCMExpect([mockPresenter_ leftNavigationButtons]);
-  OCMExpect([mockPresenter_ rightNavigationButtons]);
-  OCMExpect([mockPresenter_ viewLoaded]);
+  // TODO: Fill this in.
 
   XCTAssertNotNil([viewController_ homeView]);
 }
