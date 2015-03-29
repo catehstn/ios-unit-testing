@@ -886,6 +886,7 @@
 				4CE037BE1AA77A650046956E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
