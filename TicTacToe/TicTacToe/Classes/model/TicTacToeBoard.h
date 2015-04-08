@@ -8,7 +8,7 @@
 @property(nonatomic, readonly) TicTacToeGameStateType gameState;
 
 // Returns the state of the square at the given position on the board.
-// Invalid posions will return TicTacToeStateInvalid.
+// Invalid positions will return TicTacToeStateInvalid.
 - (TicTacToeStateType)stateForXPos:(NSInteger)x yPos:(NSInteger)y;
 
 // Attempts to play in the position (x,y). Returns YES for success, NO if not.
