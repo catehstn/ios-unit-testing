@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C6CB85B1ADC65A90056A03A /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C6CB85A1ADC65A90056A03A /* IOKit.framework */; };
 		4CCCD8AD1A8CEC7A00AB451F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCCD8AC1A8CEC7A00AB451F /* main.m */; };
 		4CCCD8B01A8CEC7A00AB451F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCCD8AF1A8CEC7A00AB451F /* AppDelegate.m */; };
 		4CCCD8B81A8CEC7A00AB451F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CCCD8B71A8CEC7A00AB451F /* Images.xcassets */; };
@@ -81,6 +82,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4C6CB85A1ADC65A90056A03A /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/IOKit.framework; sourceTree = DEVELOPER_DIR; };
 		4CCCD8A71A8CEC7A00AB451F /* TicTacToe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TicTacToe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CCCD8AB1A8CEC7A00AB451F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4CCCD8AC1A8CEC7A00AB451F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 			files = (
 				4CE037D11AA77B8A0046956E /* CoreGraphics.framework in Frameworks */,
 				4CE037CF1AA77B830046956E /* libKIF.a in Frameworks */,
+				4C6CB85B1ADC65A90056A03A /* IOKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,6 +182,7 @@
 		4CCCD89E1A8CEC7A00AB451F = {
 			isa = PBXGroup;
 			children = (
+				4C6CB85A1ADC65A90056A03A /* IOKit.framework */,
 				4CE037D01AA77B8A0046956E /* CoreGraphics.framework */,
 				4CCCD90D1A976F6400AB451F /* includes */,
 				4CCCD8A91A8CEC7A00AB451F /* TicTacToe */,
